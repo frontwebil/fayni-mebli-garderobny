@@ -1,12 +1,19 @@
 header {
   padding: 15px 0;
   position: fixed;
+  z-index: 10;
   top: 0;
   width: 100%;
+  transition: all 0.3s ease;
 }
 
 header {
   animation: headerAppear 0.8s ease;
+}
+
+header.scrolled {
+  background: rgba(250, 245, 240, 0.95);
+  box-shadow: 0 8px 25px rgba(63, 49, 33, 0.12);
 }
 
 @keyframes headerAppear {
@@ -31,7 +38,7 @@ header .container {
   max-width: 160px;
   width: 100%;
 }
-.header-logo img{
+.header-logo img {
   width: 100%;
 }
 
@@ -61,7 +68,7 @@ header .container {
   bottom: -6px;
   width: 0;
   height: 2px;
-  background: #B57B42;
+  background: #b57b42;
   transition: width 0.3s ease;
 }
 
@@ -142,6 +149,7 @@ header .container {
 }
 
 .header-call-button {
+  border: 1px solid rgb(220, 220, 220);
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -166,7 +174,7 @@ header .container {
 }
 
 .header-call-button svg {
-  color: #3F3121;
+  color: #3f3121;
   width: 26px;
   height: 26px;
   transition: transform 0.3s ease;

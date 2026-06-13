@@ -4,6 +4,7 @@ import { LiaPhoneSolid } from "react-icons/lia";
 import { useEffect, useRef, useState } from "react";
 
 export function Header() {
+  const [scrolled, setScrolled] = useState(false);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const menuRef = useRef<HTMLElement | null>(null);
 
@@ -21,12 +22,21 @@ export function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header ref={menuRef}>
+    <header ref={menuRef} className={scrolled ? "scrolled" : ""}>
       <div className="container">
-        <div className="header-logo">
+        <a href="/" className="header-logo">
           <img src="/Header/logo.png" alt="Файні Меблі" />
-        </div>
+        </a>
         <nav className="header-nav">
           <a href="#" className="header-nav-link">
             Каталог
@@ -78,7 +88,6 @@ export function Header() {
             <LiaPhoneSolid />
           </div>
         </div>
-
       </div>
     </header>
   );
