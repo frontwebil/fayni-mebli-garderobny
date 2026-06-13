@@ -41,23 +41,27 @@ const CatalogData = [
 
 export function Catalog() {
   return (
-    <section className="catalog">
+    <section className="catalog" id="catalog" aria-labelledby="catalog-title">
       <div className="container">
         <div className="catalog-top">
-          <h2 className="catalog-title">Каталог</h2>
+          <h2 className="catalog-title" id="catalog-title">
+            Каталог гардеробних
+          </h2>
           <div className="line"></div>
         </div>
 
         <div className="catalog-cards">
           {CatalogData.map((wardrobe) => (
-            <a href="" className="catalog-card">
+            <article className="catalog-card" key={wardrobe.id}>
               <img
                 src={wardrobe.image}
                 alt={wardrobe.title}
                 className="catalog-card-img"
+                loading="lazy"
+                decoding="async"
               />
               <div className="catalog-card-text-wrapper">
-                <h2 className="catalog-card-text">{wardrobe.title}</h2>
+                <h3 className="catalog-card-text">{wardrobe.title}</h3>
                 <p className="catalog-card-price">
                   від{" "}
                   <span style={{ color: "rgba(181, 123, 66, 1)" }}>
@@ -65,7 +69,7 @@ export function Catalog() {
                   </span>
                 </p>
               </div>
-            </a>
+            </article>
           ))}
         </div>
 

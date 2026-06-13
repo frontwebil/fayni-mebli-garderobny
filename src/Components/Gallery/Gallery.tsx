@@ -77,10 +77,10 @@ export function Gallery() {
   };
 
   return (
-    <section className="gallery">
+    <section className="gallery" id="gallery" aria-labelledby="gallery-title">
       <div className="container">
         <div className="gallery-text-top-wrapper">
-          <h2 className="gallery-text-top-wrapper-title">
+          <h2 className="gallery-text-top-wrapper-title" id="gallery-title">
             Реальні фото наших гардеробних
           </h2>
           <div className="line"></div>
@@ -100,6 +100,8 @@ export function Gallery() {
               <img
                 src={image.src}
                 alt={image.alt}
+                loading="lazy"
+                decoding="async"
               />
             </button>
           ))}
@@ -140,6 +142,7 @@ export function Gallery() {
                 className="gallery-modal-image"
                 src={images[activeIndex].src}
                 alt={images[activeIndex].alt}
+                decoding="async"
               />
             </div>
 

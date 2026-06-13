@@ -35,13 +35,13 @@ export function Header() {
     <header ref={menuRef} className={scrolled ? "scrolled" : ""}>
       <div className="container">
         <a href="/" className="header-logo">
-          <img src="/Header/logo.png" alt="Файні Меблі" />
+          <img src="/Header/logo.png" alt="Логотип Файні Меблі" />
         </a>
         <nav className="header-nav">
-          <a href="#" className="header-nav-link">
+          <a href="#catalog" className="header-nav-link">
             Каталог
           </a>
-          <a href="#" className="header-nav-link">
+          <a href="#gallery" className="header-nav-link">
             Галерея
           </a>
           <a href="#" className="header-nav-link">
@@ -60,7 +60,7 @@ export function Header() {
             </button>
             <div className={`header-nav-under-menu ${isOpenMenu && "visible"}`}>
               <a
-                href="#"
+                href="#hero"
                 className="header-nav-link"
                 onClick={() => setIsOpenMenu(false)}
               >
@@ -74,7 +74,7 @@ export function Header() {
                 Наші замовники
               </a>
               <a
-                href="#"
+                href="#video-section"
                 className="header-nav-link"
                 onClick={() => setIsOpenMenu(false)}
               >

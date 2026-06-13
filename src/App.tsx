@@ -8,10 +8,12 @@ function App() {
   return (
     <>
       <Header />
-      <Hero />
-      <Catalog />
-      <VideoSection />
-      <Gallery />
+      <main>
+        <Hero />
+        <Catalog />
+        <VideoSection />
+        <Gallery />
+      </main>
     </>
   );
 }

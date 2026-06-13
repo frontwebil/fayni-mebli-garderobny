@@ -2,11 +2,11 @@ import "./style.css";
 
 export function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="hero" aria-labelledby="hero-title">
       <div className="container">
         <div className="hero-text-wrapper">
-          <h1 className="hero-text-wrapper-title">
-            Гардеробна,де кожна річ має своє місце
+          <h1 className="hero-text-wrapper-title" id="hero-title">
+            Гардеробна, де кожна річ має своє місце
           </h1>
           <div className="line"></div>
           <p className="hero-text-wrapper-text">
@@ -17,7 +17,8 @@ export function Hero() {
           <div className="hero-advantage">
             <img
               src="/Hero/advantage-1.svg"
-              alt="icon"
+              alt=""
+              aria-hidden="true"
               className="hero-advantage-img"
             />
             <p className="hero-advantage-text">
@@ -28,7 +29,8 @@ export function Hero() {
           <div className="hero-advantage">
             <img
               src="/Hero/advantage-2.svg"
-              alt="icon"
+              alt=""
+              aria-hidden="true"
               className="hero-advantage-img"
             />
             <p className="hero-advantage-text">
@@ -39,7 +41,8 @@ export function Hero() {
           <div className="hero-advantage">
             <img
               src="/Hero/advantage-3.svg"
-              alt="icon"
+              alt=""
+              aria-hidden="true"
               className="hero-advantage-img"
             />
             <p className="hero-advantage-text">
@@ -50,14 +53,20 @@ export function Hero() {
         <button className="hero-button">
           <img
             src="/Hero/calculator.svg"
-            alt="calculator"
+            alt=""
+            aria-hidden="true"
             className="hero-button-icon"
           />
           <p>Розрахувати вартість</p>
         </button>
         <div className="header-examples-wardrobe">
           <div className="header-wardrobe">
-            <img src="/Hero/examples/1.webp" alt="Сучасні Гардеробні" />
+            <img
+              src="/Hero/examples/1.webp"
+              alt="Сучасна гардеробна на замовлення"
+              loading="lazy"
+              decoding="async"
+            />
             <p>
               Сучасні
               <br />
@@ -65,7 +74,12 @@ export function Hero() {
             </p>
           </div>
           <div className="header-wardrobe">
-            <img src="/Hero/examples/2.webp" alt="Класичні Гардеробні" />
+            <img
+              src="/Hero/examples/2.webp"
+              alt="Класична гардеробна на замовлення"
+              loading="lazy"
+              decoding="async"
+            />
             <p>
               Класичні
               <br />
@@ -73,7 +87,12 @@ export function Hero() {
             </p>
           </div>
           <div className="header-wardrobe">
-            <img src="/Hero/examples/3.webp" alt="Преміум Гардеробні" />
+            <img
+              src="/Hero/examples/3.webp"
+              alt="Преміум гардеробна на замовлення"
+              loading="lazy"
+              decoding="async"
+            />
             <p>
               Преміум
               <br />
@@ -81,7 +100,12 @@ export function Hero() {
             </p>
           </div>
           <div className="header-wardrobe">
-            <img src="/Hero/examples/4.webp" alt="На мансарду Гардеробні" />
+            <img
+              src="/Hero/examples/4.webp"
+              alt="Гардеробна на мансарду"
+              loading="lazy"
+              decoding="async"
+            />
             <p>
               На мансарду
               <br />
