@@ -45,7 +45,7 @@ export function Catalog() {
       <div className="container">
         <div className="catalog-top">
           <h2 className="catalog-title" id="catalog-title">
-            Каталог гардеробних
+            Каталог
           </h2>
           <div className="line"></div>
         </div>
