@@ -5,7 +5,7 @@ import { Hero } from "./Components/Hero/Hero";
 function App() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Hero />
       <Catalog />
     </>
