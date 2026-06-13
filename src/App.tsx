@@ -2,6 +2,7 @@ import { Catalog } from "./Components/Catalog/Catalog";
 import { Gallery } from "./Components/Gallery/Gallery";
 import { Header } from "./Components/Header/Header";
 import { Hero } from "./Components/Hero/Hero";
+import { Testimonials } from "./Components/Testimonials/Testimonials";
 import { VideoSection } from "./Components/VideoSection/VideoSection";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Catalog />
         <VideoSection />
         <Gallery />
+        <Testimonials />
       </main>
     </>
   );
