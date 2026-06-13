@@ -50,7 +50,7 @@ export function Catalog() {
 
         <div className="catalog-cards">
           {CatalogData.map((wardrobe) => (
-            <div className="catalog-card">
+            <a href="" className="catalog-card">
               <img
                 src={wardrobe.image}
                 alt={wardrobe.title}
@@ -65,7 +65,7 @@ export function Catalog() {
                   </span>
                 </p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 

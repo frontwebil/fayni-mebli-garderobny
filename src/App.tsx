@@ -1,6 +1,8 @@
 import { Catalog } from "./Components/Catalog/Catalog";
+import { Gallery } from "./Components/Gallery/Gallery";
 import { Header } from "./Components/Header/Header";
 import { Hero } from "./Components/Hero/Hero";
+import { VideoSection } from "./Components/VideoSection/VideoSection";
 
 function App() {
   return (
@@ -8,6 +10,8 @@ function App() {
       <Header />
       <Hero />
       <Catalog />
+      <VideoSection />
+      <Gallery />
     </>
   );
 }
