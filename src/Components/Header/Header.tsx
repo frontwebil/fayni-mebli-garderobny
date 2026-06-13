@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 export function Header() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-  const menuRef = useRef(null);
+  const menuRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
