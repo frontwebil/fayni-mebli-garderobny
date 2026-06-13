@@ -2,8 +2,6 @@
   padding: 60px 0 120px;
   background: rgba(255, 255, 255, 1);
 }
-.container {
-}
 .testimonials-top {
   max-width: 1000px;
   width: 100%;
@@ -31,8 +29,6 @@
 
   margin-bottom: 16px;
 }
-.line {
-}
 .testimonials-tablet {
   max-width: 860px;
   width: 100%;
@@ -57,7 +53,9 @@
   overflow: hidden;
   background: transparent;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .testimonials-card:hover {
