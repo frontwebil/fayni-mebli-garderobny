@@ -342,6 +342,21 @@ export function Calculating() {
                 </div>
               </>
             )}
+            {currentStep === 5 && (
+              <>
+                <p className="calculating-wrapper-content-text">
+                  Ми вже підготували для вас кілька рішень <br />
+                  Як з Вами зв’язатись?
+                </p>
+                <form className="calculating-wrapper-content-text-form">
+                  <input type="text" placeholder="Ваше ім'я" />
+                  <input type="tel" />
+                </form>
+                <button className="calculating-wrapper-content-text-form-button">
+                  Отримати прорахунок
+                </button>
+              </>
+            )}
           </div>
           <button
             type="button"
