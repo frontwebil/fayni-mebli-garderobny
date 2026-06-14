@@ -1,0 +1,35 @@
+.customers {
+  padding: 0 0 120px;
+}
+.customers-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+.customers-top-title {
+  font-family: PT Serif Caption;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 140%;
+  letter-spacing: 0%;
+}
+.customers-grid {
+  margin-top: 40px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+.customer-card img {
+}
+.customer-card {
+  background: rgba(255, 255, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  width: 100%;
+  aspect-ratio: 9 /5;
+}

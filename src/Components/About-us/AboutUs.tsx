@@ -4,9 +4,13 @@ export function AboutUs() {
   return (
     <section className="about-us">
       <div className="container">
-        <div className="about-us-img"></div>
+        <div className="about-us-img">
+          <img src="/About/main.webp" alt="Фото нашої команди" loading="lazy" />
+        </div>
         <div className="about-us-text">
-          <h2 className="about-us-text-title">Про нас- честно і без прикрас</h2>
+          <h2 className="about-us-text-title">
+            Про нас - честно і без прикрас
+          </h2>
           <div className="line"></div>
           <div className="about-us-text-content">
             <div className="about-us-text-content-row">
@@ -28,6 +32,22 @@ export function AboutUs() {
               <p className="about-us-text-content-row-text">
                 Ми не продаємо обіцянки. Ми продаємо результат.
               </p>
+            </div>
+          </div>
+          <div className="about-us-documents">
+            <div className="about-us-document">
+              <img
+                src="/About/1.webp"
+                alt="Свідотство на знак для товарів і послуг №179623"
+                loading="lazy"
+              />
+            </div>
+            <div className="about-us-document">
+              <img
+                src="/About/2.webp"
+                alt="Свідотство на торгівельну марку №289704"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

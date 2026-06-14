@@ -1,21 +1,72 @@
 .about-us {
   padding: 120px 0;
 }
-.container {
+.about-us .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
 }
 .about-us-img {
+  max-width: 650px;
+  width: 100%;
+  border-radius: 16px;
+  aspect-ratio: 16 / 10;
 }
+
+.about-us-img img {
+  border-radius: 16px;
+  width: 100%;
+}
+
 .about-us-text {
+  max-width: 660px;
+  width: 100%;
 }
+
 .about-us-text-title {
+  font-family: PT Serif Caption;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  margin-bottom: 16px;
 }
-.line {
-}
+
 .about-us-text-content {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .about-us-text-content-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 .about-us-text-content-row-count {
+  font-family: PT Serif Caption;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 140%;
+  letter-spacing: 0%;
 }
 .about-us-text-content-row-text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0%;
+}
+
+.about-us-documents {
+  display: flex;
+  gap: 20px;
+  margin-top: 32px;
+}
+.about-us-document {
+  max-width: 215px;
+  width: 100%;
+}
+
+.about-us-document img{
+  width: 100%;
 }
