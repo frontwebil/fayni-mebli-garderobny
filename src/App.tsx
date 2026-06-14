@@ -1,3 +1,4 @@
+import { Advantages } from "./Components/Advantages/Advantages";
 import { Calculating } from "./Components/Calculating/Calculating";
 import { Catalog } from "./Components/Catalog/Catalog";
 import { Gallery } from "./Components/Gallery/Gallery";
@@ -17,6 +18,7 @@ function App() {
         <Gallery />
         <Testimonials />
         <Calculating />
+        <Advantages />
       </main>
     </>
   );
