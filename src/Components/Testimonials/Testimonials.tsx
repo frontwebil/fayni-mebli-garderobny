@@ -8,7 +8,7 @@ export function Testimonials() {
         src: `/Testimonials/${index + 1}.webp`,
         alt: `Відгук ${index + 1}`,
       })),
-    []
+    [],
   );
 
   const [activeReview, setActiveReview] = useState<number | null>(null);
