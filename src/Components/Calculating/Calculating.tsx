@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import "./style.css";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa";
 
-const TOTAL_STEPS = 5 as const;
-const STEP_KEYS = ["type", "style", "room", "size", "budget"] as const;
+const TOTAL_STEPS = 6 as const;
+const STEP_KEYS = [
+  "type",
+  "style",
+  "room",
+  "size",
+  "budget",
+  "contact",
+] as const;
 type QuizKey = (typeof STEP_KEYS)[number];
 
 export function Calculating() {
@@ -15,10 +22,38 @@ export function Calculating() {
     room: "",
     size: "",
     budget: "",
+    name: "",
+    phone: "+380 ",
   });
 
+  const getPhoneDigits = (value: string) => {
+    const digits = value.replace(/\D/g, "");
+
+    if (!digits) return "";
+
+    if (digits.startsWith("380")) {
+      return digits.slice(3, 12);
+    }
+
+    if (digits.startsWith("0")) {
+      return digits.slice(1, 10);
+    }
+
+    return digits.slice(0, 9);
+  };
+
   const currentKey = STEP_KEYS[currentStep] as QuizKey;
-  const isCurrentAnswered = quizData[currentKey].trim().length > 0;
+  const currentAnswer =
+    currentKey === "contact"
+      ? ""
+      : quizData[currentKey as keyof typeof quizData];
+  const phoneDigits = getPhoneDigits(quizData.phone);
+  const isContactStepValid =
+    quizData.name.trim().length > 1 && phoneDigits.length === 9;
+  const isCurrentAnswered =
+    currentKey === "contact"
+      ? isContactStepValid
+      : currentAnswer.trim().length > 0;
 
   const isPrevDisabled = currentStep <= 0;
   const isNextDisabled = currentStep >= TOTAL_STEPS - 1 || !isCurrentAnswered;
@@ -36,6 +71,20 @@ export function Calculating() {
   const selectAndNext = (key: QuizKey, value: string) => {
     setQuizData((prev) => ({ ...prev, [key]: value }));
     setCurrentStep((s) => Math.min(TOTAL_STEPS - 1, s + 1));
+  };
+
+  const formatPhone = (value: string) => {
+    const digits = getPhoneDigits(value);
+
+    if (!digits) return "+380 ";
+
+    return `+380 ${digits}`;
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!isContactStepValid) return;
+    console.log(quizData);
   };
 
   return (
@@ -65,7 +114,7 @@ export function Calculating() {
             <div className="progress-line">
               <div
                 className="progress-line-progress"
-                style={{ width: `${(currentStep + 1 / TOTAL_STEPS) * 100}%` }}
+                style={{ width: `${((currentStep + 1) / TOTAL_STEPS) * 100}%` }}
               ></div>
             </div>
             {currentStep === 0 && (
@@ -344,17 +393,48 @@ export function Calculating() {
             )}
             {currentStep === 5 && (
               <>
-                <p className="calculating-wrapper-content-text">
+                <p className="calculating-wrapper-content-text calculating-wrapper-content-text-last">
                   Ми вже підготували для вас кілька рішень <br />
                   Як з Вами зв’язатись?
                 </p>
-                <form className="calculating-wrapper-content-text-form">
-                  <input type="text" placeholder="Ваше ім'я" />
-                  <input type="tel" />
+                <form
+                  className="calculating-wrapper-content-text-form-wrapper"
+                  onSubmit={handleSubmit}
+                >
+                  <div className="calculating-wrapper-content-text-form">
+                    <input
+                      type="text"
+                      placeholder="Ваше ім'я"
+                      value={quizData.name}
+                      onChange={(e) =>
+                        setQuizData((prev) => ({
+                          ...prev,
+                          name: e.target.value,
+                        }))
+                      }
+                    />
+                    <input
+                      type="tel"
+                      placeholder="+380 500000000"
+                      inputMode="numeric"
+                      maxLength={14}
+                      value={quizData.phone}
+                      onChange={(e) =>
+                        setQuizData((prev) => ({
+                          ...prev,
+                          phone: formatPhone(e.target.value),
+                        }))
+                      }
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="calculating-wrapper-content-text-form-button"
+                    disabled={!isContactStepValid}
+                  >
+                    Отримати прорахунок
+                  </button>
                 </form>
-                <button className="calculating-wrapper-content-text-form-button">
-                  Отримати прорахунок
-                </button>
               </>
             )}
           </div>

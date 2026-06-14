@@ -1,5 +1,6 @@
 .calculating {
   padding: 60px 0 120px;
+  min-height: 100vh;
 }
 .calculating-top {
   max-width: 780px;
@@ -121,6 +122,10 @@
   vertical-align: middle;
 
   padding: 16px 0 32px;
+}
+
+.calculating-wrapper-content-text-last {
+  padding-bottom: 24px;
 }
 .calculating-wrapper-grid {
   display: grid;
@@ -252,7 +257,7 @@
 
 .calculating-wrapper-content-text-form-button {
   cursor: pointer;
-  margin: 32px 0;
+  margin: 24px 0 0;
   padding: 20px;
   max-width: 100%;
   width: 100%;
@@ -265,4 +270,48 @@
   box-shadow: inset 0 0 24px rgb(234, 165, 98);
   border-radius: 4px;
   transition: all 0.3s ease;
+  border: none;
+}
+
+.calculating-wrapper-content-text-form-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.calculating-wrapper-content-text-form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculating-wrapper-content-text-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.calculating-wrapper-content-text-form input {
+  width: 100%;
+  height: 46px;
+  border: 1px solid rgba(63, 49, 33, 0.12);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 1);
+  padding: 0 16px;
+  font-size: 16px;
+  line-height: 140%;
+  color: rgba(63, 49, 33, 1);
+}
+
+.calculating-wrapper-content-text-form input::placeholder {
+  color: rgba(63, 49, 33, 0.8);
+}
+
+.calculating-wrapper-content-text-form input:focus {
+  outline: none;
+  border-color: rgba(181, 123, 66, 1);
+}
+
+@media (max-width: 768px) {
+  .calculating-wrapper-content-text-form {
+    grid-template-columns: 1fr;
+  }
 }
