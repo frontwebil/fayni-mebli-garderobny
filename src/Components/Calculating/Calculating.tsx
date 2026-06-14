@@ -136,6 +136,8 @@ export function Calculating() {
                       src="/Calculating/1.webp"
                       alt="Пряма гардеробна"
                       className="calculating-wrapper-grid-card-img"
+                      loading="lazy"
+                      decoding="async"
                     />
                     {quizData.type === "Пряма" && (
                       <div className="calculating-wrapper-grid-card-choosed">
@@ -157,6 +159,8 @@ export function Calculating() {
                       src="/Calculating/2.webp"
                       alt="Кутова гардеробна"
                       className="calculating-wrapper-grid-card-img"
+                      loading="lazy"
+                      decoding="async"
                     />
                     {quizData.type === "Кутова" && (
                       <div className="calculating-wrapper-grid-card-choosed">
@@ -178,6 +182,8 @@ export function Calculating() {
                       src="/Calculating/3.webp"
                       alt="П-подібна гардеробна"
                       className="calculating-wrapper-grid-card-img"
+                      loading="lazy"
+                      decoding="async"
                     />
                     {quizData.type === "П-подібна" && (
                       <div className="calculating-wrapper-grid-card-choosed">
@@ -201,6 +207,8 @@ export function Calculating() {
                       src="/Calculating/4.webp"
                       alt="Ще не знаю"
                       className="calculating-wrapper-grid-card-img"
+                      loading="lazy"
+                      decoding="async"
                     />
                     {quizData.type === "Ще не знаю" && (
                       <div className="calculating-wrapper-grid-card-choosed">

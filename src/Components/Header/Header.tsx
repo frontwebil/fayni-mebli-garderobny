@@ -60,6 +60,13 @@ export function Header() {
             </button>
             <div className={`header-nav-under-menu ${isOpenMenu && "visible"}`}>
               <a
+                href="#advantages"
+                className="header-nav-link"
+                onClick={() => setIsOpenMenu(false)}
+              >
+                Наші переваги
+              </a>
+              <a
                 href="#hero"
                 className="header-nav-link"
                 onClick={() => setIsOpenMenu(false)}
@@ -67,7 +74,7 @@ export function Header() {
                 Про нас
               </a>
               <a
-                href="#"
+                href="#about"
                 className="header-nav-link"
                 onClick={() => setIsOpenMenu(false)}
               >

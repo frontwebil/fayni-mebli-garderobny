@@ -1,3 +1,4 @@
+import { AboutUs } from "./Components/About-us/AboutUs";
 import { Advantages } from "./Components/Advantages/Advantages";
 import { Calculating } from "./Components/Calculating/Calculating";
 import { Catalog } from "./Components/Catalog/Catalog";
@@ -19,6 +20,7 @@ function App() {
         <Testimonials />
         <Calculating />
         <Advantages />
+        <AboutUs />
       </main>
     </>
   );
