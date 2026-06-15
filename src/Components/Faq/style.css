@@ -1,0 +1,84 @@
+.faq {
+  padding: 0 0 60px;
+}
+.container {
+}
+.faq-top {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.faq-top-title {
+  font-family: PT Serif Caption;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+.faq-grid {
+  margin-top: 32px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 80px;
+}
+.faq-card {
+  border-bottom: 1px solid rgba(63, 49, 33, 0.08);
+  padding: 16px 0;
+}
+.faq-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-card-top-text {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.faq-card-top-text-count {
+  font-family: PT Serif Caption;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgba(63, 49, 33, 1);
+}
+.faq-card-top-text-title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  max-width: 560px;
+}
+
+.faq-card-top-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  background: rgba(63, 49, 33, 0.32);
+  box-shadow: 0px 0px 24px 0px rgba(255, 255, 255, 0.25) inset; 
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-card-top-icon svg{
+  color: rgba(255, 255, 255, 1);
+}
+
+.faq-card-text {
+  padding-top: 16px;
+
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+}

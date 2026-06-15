@@ -1,3 +1,4 @@
+import { IoIosArrowDown } from "react-icons/io";
 import "./style.css";
 
 const faqData = [
@@ -71,6 +72,22 @@ export function Faq() {
         <div className="faq-top">
           <h2 className="faq-top-title">Найчастіші питання</h2>
           <div className="line"></div>
+        </div>
+        <div className="faq-grid">
+          {faqData.map((data) => (
+            <div className="faq-card">
+              <div className="faq-card-top">
+                <div className="faq-card-top-text">
+                  <span className="faq-card-top-text-count">{data.id}</span>
+                  <h2 className="faq-card-top-text-title">{data.question}</h2>
+                </div>
+                <div className="faq-card-top-icon">
+                  <IoIosArrowDown />
+                </div>
+              </div>
+              <div className="faq-card-text">{data.answer}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

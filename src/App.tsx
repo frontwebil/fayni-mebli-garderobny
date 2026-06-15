@@ -3,6 +3,7 @@ import { Advantages } from "./Components/Advantages/Advantages";
 import { Calculating } from "./Components/Calculating/Calculating";
 import { Catalog } from "./Components/Catalog/Catalog";
 import { Customers } from "./Components/Customers/Customers";
+import { Faq } from "./Components/Faq/Faq";
 import { Gallery } from "./Components/Gallery/Gallery";
 import { Header } from "./Components/Header/Header";
 import { Hero } from "./Components/Hero/Hero";
@@ -23,6 +24,7 @@ function App() {
         <Advantages />
         <AboutUs />
         <Customers />
+        <Faq />
       </main>
     </>
   );
