@@ -1,4 +1,10 @@
 /* font-family: "PT Serif Caption", serif; */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 body {
   margin: 0;
   padding: 0;
