@@ -8,7 +8,15 @@ export function VideoSection() {
       aria-labelledby="video-section-title"
     >
       <div className="container">
-        <div className="VideoSection-video"></div>
+        <div className="VideoSection-video">
+          <iframe
+            src="https://www.youtube.com/embed/oYytYK4gGQY?si=MYUL5hNaUWnKecfN"
+            title="Відеозвернення Файні Меблі"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
         <div className="VideoSection-text">
           <p className="VideoSection-subtitle">Відеозвернення</p>
           <h2 id="video-section-title" className="VideoSection-title">

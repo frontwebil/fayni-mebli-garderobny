@@ -53,10 +53,14 @@ const advantages = [
 
 export function Advantages() {
   return (
-    <section className="advantages">
+    <section
+      className="advantages"
+      id="advantages"
+      aria-labelledby="advantages-title"
+    >
       <div className="container">
         <div className="advantages-top">
-          <h3 className="advantages-top-title">
+          <h3 className="advantages-top-title" id="advantages-title">
             Файні меблі — компанія, що створює естетику, комфорт та затишок
           </h3>
           <div className="line"></div>

@@ -7,6 +7,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const menuRef = useRef<HTMLElement | null>(null);
+  const closeMenu = () => setIsOpenMenu(false);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -38,52 +39,66 @@ export function Header() {
           <img src="/Header/logo.png" alt="Логотип Файні Меблі" />
         </a>
         <nav className="header-nav">
-          <a href="#catalog" className="header-nav-link">
+          <a href="#catalog" className="header-nav-link" onClick={closeMenu}>
             Каталог
           </a>
-          <a href="#gallery" className="header-nav-link">
+          <a href="#gallery" className="header-nav-link" onClick={closeMenu}>
             Галерея
           </a>
-          <a href="#" className="header-nav-link">
+          <a
+            href="#testimonials"
+            className="header-nav-link"
+            onClick={closeMenu}
+          >
             Відгуки
           </a>
-          <a href="#" className="header-nav-link">
+          <a
+            href="#calculating"
+            className="header-nav-link"
+            onClick={closeMenu}
+          >
             Розрахунок вартості
           </a>
           <div className="header-nav-button-menu-wrapper">
             <button
+              type="button"
               className={`header-nav-button ${isOpenMenu ? "active" : ""}`}
               onClick={() => setIsOpenMenu(!isOpenMenu)}
+              aria-expanded={isOpenMenu}
+              aria-controls="header-company-menu"
             >
               <p>Про компанію</p>
               <IoMdArrowDropright />
             </button>
-            <div className={`header-nav-under-menu ${isOpenMenu && "visible"}`}>
+            <div
+              id="header-company-menu"
+              className={`header-nav-under-menu ${isOpenMenu ? "visible" : ""}`}
+            >
               <a
                 href="#advantages"
                 className="header-nav-link"
-                onClick={() => setIsOpenMenu(false)}
+                onClick={closeMenu}
               >
                 Наші переваги
               </a>
               <a
-                href="#hero"
+                href="#about"
                 className="header-nav-link"
-                onClick={() => setIsOpenMenu(false)}
+                onClick={closeMenu}
               >
                 Про нас
               </a>
               <a
-                href="#about"
+                href="#customers"
                 className="header-nav-link"
-                onClick={() => setIsOpenMenu(false)}
+                onClick={closeMenu}
               >
                 Наші замовники
               </a>
               <a
                 href="#video-section"
                 className="header-nav-link"
-                onClick={() => setIsOpenMenu(false)}
+                onClick={closeMenu}
               >
                 Відеозвернення
               </a>

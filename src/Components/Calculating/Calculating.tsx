@@ -88,11 +88,15 @@ export function Calculating() {
   };
 
   return (
-    <section className="calculating">
+    <section
+      className="calculating"
+      id="calculating"
+      aria-labelledby="calculating-title"
+    >
       <div className="container">
         <div className="calculating-top">
           <h4 className="calculating-top-subtitle">розрахунок вартості</h4>
-          <h3 className="calculating-top-title">
+          <h3 className="calculating-top-title" id="calculating-title">
             Дізнайтесь вартість вашої гардеробної
           </h3>
           <div className="line"></div>

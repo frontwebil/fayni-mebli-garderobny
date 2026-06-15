@@ -2,13 +2,13 @@ import "./style.css";
 
 export function AboutUs() {
   return (
-    <section className="about-us">
+    <section className="about-us" id="about" aria-labelledby="about-title">
       <div className="container">
         <div className="about-us-img">
           <img src="/About/main.webp" alt="Фото нашої команди" loading="lazy" />
         </div>
         <div className="about-us-text">
-          <h2 className="about-us-text-title">
+          <h2 className="about-us-text-title" id="about-title">
             Про нас - честно і без прикрас
           </h2>
           <div className="line"></div>
