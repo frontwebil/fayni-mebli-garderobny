@@ -1,4 +1,5 @@
 import { IoIosArrowDown } from "react-icons/io";
+import { useState } from "react";
 import "./style.css";
 
 const faqData = [
@@ -66,6 +67,8 @@ const faqData = [
 ];
 
 export function Faq() {
+  const [openId, setOpenId] = useState<string | null>(null);
+
   return (
     <section className="faq">
       <div className="container">
@@ -74,9 +77,19 @@ export function Faq() {
           <div className="line"></div>
         </div>
         <div className="faq-grid">
-          {faqData.map((data) => (
-            <div className="faq-card">
-              <div className="faq-card-top">
+          {faqData.map((data) => {
+            const isOpen = openId === data.id;
+
+            return (
+              <div key={data.id} className={`faq-card ${isOpen ? "open" : ""}`}>
+                <button
+                  type="button"
+                  className="faq-card-top"
+                  onClick={() =>
+                    setOpenId((prev) => (prev === data.id ? null : data.id))
+                  }
+                  aria-expanded={isOpen}
+                >
                 <div className="faq-card-top-text">
                   <span className="faq-card-top-text-count">{data.id}</span>
                   <h2 className="faq-card-top-text-title">{data.question}</h2>
@@ -84,10 +97,16 @@ export function Faq() {
                 <div className="faq-card-top-icon">
                   <IoIosArrowDown />
                 </div>
+                </button>
+
+                <div className="faq-card-body">
+                  <div>
+                    <div className="faq-card-text">{data.answer}</div>
+                  </div>
+                </div>
               </div>
-              <div className="faq-card-text">{data.answer}</div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
