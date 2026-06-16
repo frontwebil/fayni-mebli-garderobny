@@ -94,3 +94,79 @@
 .catalog-see-more:active {
   transform: translateY(0);
 }
+
+@media (max-width: 920px) {
+  .catalog {
+    padding: 80px 0;
+  }
+
+  .catalog-title {
+    font-size: 32px;
+  }
+
+  .catalog-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .catalog-card-text-wrapper {
+    padding: 20px;
+  }
+
+  .catalog-card-text {
+    font-size: 20px;
+  }
+
+  .catalog-card-price {
+    font-size: 18px;
+  }
+
+  .catalog-card-price span {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .catalog {
+    padding: 28px 0 48px;
+  }
+
+  .catalog-top {
+    align-items: start;
+    margin-bottom: 24px;
+  }
+
+  .catalog-title {
+    font-size: 24px;
+    line-height: 140%;
+  }
+
+  .catalog-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .catalog-card-text-wrapper {
+    padding: 8px;
+  }
+
+  .catalog-card-text {
+    font-size: 12px;
+    max-width: 100%;
+  }
+
+  .catalog-card-price {
+    margin-top: 5px;
+    font-size: 10px;
+  }
+
+  .catalog-card-price span {
+    font-size: 13px;
+  }
+
+  .catalog-see-more {
+    margin-top: 24px;
+    max-width: 100%;
+    height: 52px;
+    font-size: 14px;
+  }
+}

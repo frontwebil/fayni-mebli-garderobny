@@ -23,13 +23,59 @@
   gap: 20px;
 }
 .customer-card img {
+  width: 100%;
+  aspect-ratio: 9 /5;
+  object-fit: contain;
 }
 .customer-card {
+  padding: 20px;
+  overflow: hidden;
   background: rgba(255, 255, 255, 1);
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
-  width: 100%;
-  aspect-ratio: 9 /5;
+}
+
+@media (max-width: 920px) {
+  .customers {
+    padding: 0 0 80px;
+  }
+
+  .customers-top-title {
+    font-size: 32px;
+  }
+
+  .customers-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .customers {
+    padding: 0 0 60px;
+  }
+
+  .customers-top-title {
+    font-size: 24px;
+    line-height: 140%;
+  }
+
+  .customers-top{
+    align-items: flex-start;
+  }
+
+  .customers-top{
+    gap: 0;
+  }
+
+  .customers-grid {
+    margin-top: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .customer-card{
+    padding: 10px;
+  }
 }

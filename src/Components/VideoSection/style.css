@@ -51,3 +51,48 @@
   letter-spacing: 0%;
   vertical-align: middle;
 }
+
+@media (max-width: 920px) {
+  .VideoSection .container {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+
+  .VideoSection-video,
+  .VideoSection-text {
+    max-width: 100%;
+  }
+
+  .VideoSection-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .VideoSection-video {
+    aspect-ratio: 134/75;
+  }
+  .VideoSection .container {
+    gap: 24px;
+  }
+
+  .VideoSection-video {
+    border-radius: 16px;
+  }
+
+  .VideoSection-subtitle {
+    font-size: 14px;
+    padding-bottom: 8px;
+  }
+
+  .VideoSection-title {
+    font-size: 24px;
+    line-height: 140%;
+    padding-bottom: 8px;
+  }
+
+  .VideoSection-text p {
+    font-size: 14px;
+    padding-bottom: 0;
+  }
+}

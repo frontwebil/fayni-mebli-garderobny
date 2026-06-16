@@ -70,3 +70,75 @@
 .about-us-document img{
   width: 100%;
 }
+
+@media (max-width: 920px) {
+
+  .about-us-img{
+    aspect-ratio: auto;
+  }
+  .about-us {
+    padding: 80px 0;
+  }
+
+  .about-us .container {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .about-us-img,
+  .about-us-text {
+    max-width: 100%;
+  }
+
+  .about-us-text-title {
+    font-size: 32px;
+  }
+
+  .about-us-document {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-us {
+    padding: 60px 0;
+  }
+
+  .about-us .container {
+    gap: 24px;
+  }
+
+  .about-us-text-title {
+    font-size: 24px;
+    line-height: 120%;
+    margin-bottom: 6px;
+  }
+
+  .about-us-text-content {
+    margin-top: 12px;
+    gap: 12px;
+  }
+
+  .about-us-text-content-row {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .about-us-text-content-row-count {
+    font-size: 24px;
+    min-width: 35px;
+  }
+
+  .about-us-text-content-row-text {
+    font-size: 16px;
+  }
+
+  .about-us-documents {
+    margin-top: 24px;
+    gap: 12px;
+  }
+
+  .about-us-document {
+    max-width: 100%;
+  }
+}
