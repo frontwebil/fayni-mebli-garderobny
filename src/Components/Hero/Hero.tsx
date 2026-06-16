@@ -1,4 +1,5 @@
 import "./style.css";
+import { ImagePreloader } from "../ImagePreloader/ImagePreloader";
 
 export function Hero() {
   return (
@@ -61,7 +62,7 @@ export function Hero() {
         </button>
         <div className="header-examples-wardrobe">
           <div className="header-wardrobe">
-            <img
+            <ImagePreloader
               src="/Hero/examples/1.webp"
               alt="Сучасна гардеробна на замовлення"
               loading="lazy"
@@ -74,7 +75,7 @@ export function Hero() {
             </p>
           </div>
           <div className="header-wardrobe">
-            <img
+            <ImagePreloader
               src="/Hero/examples/2.webp"
               alt="Класична гардеробна на замовлення"
               loading="lazy"
@@ -87,7 +88,7 @@ export function Hero() {
             </p>
           </div>
           <div className="header-wardrobe">
-            <img
+            <ImagePreloader
               src="/Hero/examples/3.webp"
               alt="Преміум гардеробна на замовлення"
               loading="lazy"
@@ -100,7 +101,7 @@ export function Hero() {
             </p>
           </div>
           <div className="header-wardrobe">
-            <img
+            <ImagePreloader
               src="/Hero/examples/4.webp"
               alt="Гардеробна на мансарду"
               loading="lazy"

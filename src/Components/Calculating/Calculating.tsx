@@ -143,7 +143,7 @@ export function Calculating() {
                       className="calculating-wrapper-grid-card-img"
                       loading="lazy"
                       decoding="async"
-                      wrapperClassName="calculating-wrapper-grid-card-img-wrapper"
+
                     />
                     {quizData.type === "Пряма" && (
                       <div className="calculating-wrapper-grid-card-choosed">
@@ -167,7 +167,7 @@ export function Calculating() {
                       className="calculating-wrapper-grid-card-img"
                       loading="lazy"
                       decoding="async"
-                      wrapperClassName="calculating-wrapper-grid-card-img-wrapper"
+
                     />
                     {quizData.type === "Кутова" && (
                       <div className="calculating-wrapper-grid-card-choosed">
@@ -191,7 +191,7 @@ export function Calculating() {
                       className="calculating-wrapper-grid-card-img"
                       loading="lazy"
                       decoding="async"
-                      wrapperClassName="calculating-wrapper-grid-card-img-wrapper"
+
                     />
                     {quizData.type === "П-подібна" && (
                       <div className="calculating-wrapper-grid-card-choosed">
@@ -217,7 +217,7 @@ export function Calculating() {
                       className="calculating-wrapper-grid-card-img"
                       loading="lazy"
                       decoding="async"
-                      wrapperClassName="calculating-wrapper-grid-card-img-wrapper"
+
                     />
                     {quizData.type === "Ще не знаю" && (
                       <div className="calculating-wrapper-grid-card-choosed">
