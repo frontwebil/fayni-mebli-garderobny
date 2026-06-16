@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react";
 import "./style.css";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa";
+import { ImagePreloader } from "../ImagePreloader/ImagePreloader";
 
 const TOTAL_STEPS = 6 as const;
 const STEP_KEYS = [
@@ -136,12 +137,13 @@ export function Calculating() {
                       selectAndNext("type", "Пряма");
                     }}
                   >
-                    <img
+                    <ImagePreloader
                       src="/Calculating/1.webp"
                       alt="Пряма гардеробна"
                       className="calculating-wrapper-grid-card-img"
                       loading="lazy"
                       decoding="async"
+                      wrapperClassName="calculating-wrapper-grid-card-img-wrapper"
                     />
                     {quizData.type === "Пряма" && (
                       <div className="calculating-wrapper-grid-card-choosed">
@@ -159,12 +161,13 @@ export function Calculating() {
                       selectAndNext("type", "Кутова");
                     }}
                   >
-                    <img
+                    <ImagePreloader
                       src="/Calculating/2.webp"
                       alt="Кутова гардеробна"
                       className="calculating-wrapper-grid-card-img"
                       loading="lazy"
                       decoding="async"
+                      wrapperClassName="calculating-wrapper-grid-card-img-wrapper"
                     />
                     {quizData.type === "Кутова" && (
                       <div className="calculating-wrapper-grid-card-choosed">
@@ -182,12 +185,13 @@ export function Calculating() {
                       selectAndNext("type", "П-подібна");
                     }}
                   >
-                    <img
+                    <ImagePreloader
                       src="/Calculating/3.webp"
                       alt="П-подібна гардеробна"
                       className="calculating-wrapper-grid-card-img"
                       loading="lazy"
                       decoding="async"
+                      wrapperClassName="calculating-wrapper-grid-card-img-wrapper"
                     />
                     {quizData.type === "П-подібна" && (
                       <div className="calculating-wrapper-grid-card-choosed">
@@ -207,12 +211,13 @@ export function Calculating() {
                       selectAndNext("type", "Ще не знаю");
                     }}
                   >
-                    <img
+                    <ImagePreloader
                       src="/Calculating/4.webp"
                       alt="Ще не знаю"
                       className="calculating-wrapper-grid-card-img"
                       loading="lazy"
                       decoding="async"
+                      wrapperClassName="calculating-wrapper-grid-card-img-wrapper"
                     />
                     {quizData.type === "Ще не знаю" && (
                       <div className="calculating-wrapper-grid-card-choosed">
@@ -407,7 +412,7 @@ export function Calculating() {
               <>
                 <p className="calculating-wrapper-content-text calculating-wrapper-content-text-last">
                   Ми вже підготували для вас кілька рішень <br />
-                  Як з Вами зв’язатись?
+                  Як з Вами зв'язатись?
                 </p>
                 <form
                   className="calculating-wrapper-content-text-form-wrapper"

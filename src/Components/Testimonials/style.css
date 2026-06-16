@@ -63,6 +63,11 @@
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
+.testimonials-card .image-preloader-wrapper {
+  width: 100%;
+  background: rgba(63, 49, 33, 0.04);
+}
+
 .testimonials-card img {
   width: 100%;
   display: block;
