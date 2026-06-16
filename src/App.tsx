@@ -6,6 +6,7 @@ import { Customers } from "./Components/Customers/Customers";
 import { Faq } from "./Components/Faq/Faq";
 import { Footer } from "./Components/Footer/Footer";
 import { Gallery } from "./Components/Gallery/Gallery";
+import { Header } from "./Components/Header/Header";
 import { Hero } from "./Components/Hero/Hero";
 import { Testimonials } from "./Components/Testimonials/Testimonials";
 import { VideoSection } from "./Components/VideoSection/VideoSection";
@@ -13,6 +14,7 @@ import { VideoSection } from "./Components/VideoSection/VideoSection";
 function App() {
   return (
     <>
+      <Header />
       <main>
         <Hero />
         <Catalog />
