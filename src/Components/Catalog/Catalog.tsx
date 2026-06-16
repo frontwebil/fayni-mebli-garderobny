@@ -1,4 +1,5 @@
 import "./style.css";
+import { ImagePreloader } from "../ImagePreloader/ImagePreloader";
 
 const CatalogData = [
   {
@@ -53,12 +54,13 @@ export function Catalog() {
         <div className="catalog-cards">
           {CatalogData.map((wardrobe) => (
             <article className="catalog-card" key={wardrobe.id}>
-              <img
+              <ImagePreloader
                 src={wardrobe.image}
                 alt={wardrobe.title}
                 className="catalog-card-img"
                 loading="lazy"
                 decoding="async"
+                wrapperClassName="catalog-card-img-wrapper"
               />
               <div className="catalog-card-text-wrapper">
                 <h3 className="catalog-card-text">{wardrobe.title}</h3>

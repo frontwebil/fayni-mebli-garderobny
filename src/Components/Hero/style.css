@@ -125,3 +125,141 @@
   max-width: 130px;
   width: 100%;
 }
+
+/* ========== Tablet ========== */
+@media (max-width: 920px) {
+  .hero .container {
+    padding-top: 90px;
+    padding-bottom: 60px;
+  }
+
+  .hero-text-wrapper {
+    max-width: 600px;
+    gap: 12px;
+  }
+
+  .hero-text-wrapper-title {
+    font-size: 48px;
+  }
+
+  .hero-text-wrapper-text {
+    font-size: 20px;
+  }
+
+  .hero-advantages-row {
+    margin-top: 24px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-advantage-text {
+    font-size: 14px;
+    max-width: 120px;
+  }
+
+  .hero-button {
+    margin: 24px 0;
+  }
+
+  .header-examples-wardrobe {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 400px;
+  }
+
+  .header-wardrobe {
+    max-width: 100%;
+  }
+
+  .header-wardrobe p {
+    font-size: 12px;
+    max-width: 110px;
+    padding: 4px 0;
+  }
+}
+
+/* ========== Mobile ========== */
+@media (max-width: 600px) {
+  .hero .container {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    min-height: auto;
+  }
+
+  .hero-text-wrapper {
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .hero-text-wrapper-title {
+    font-size: 28px;
+    line-height: 125%;
+  }
+
+  .hero-text-wrapper-text {
+    font-size: 16px;
+  }
+
+  .hero-advantages-row {
+    margin-top: 20px;
+    gap: 12px;
+  }
+
+  .hero-advantage {
+    gap: 10px;
+  }
+
+  .hero-advantage-img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .hero-advantage-text {
+    font-size: 12px;
+    max-width: 100px;
+  }
+
+  .hero-advantages-line {
+    height: 32px;
+  }
+
+  .hero-button {
+    margin: 20px 0;
+    max-width: 100%;
+    padding: 16px;
+    font-size: 14px;
+  }
+
+  .header-examples-wardrobe {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    max-width: 100%;
+  }
+
+  .header-examples-wardrobe::-webkit-scrollbar {
+    display: none;
+  }
+
+  .header-wardrobe {
+    min-width: 140px;
+    max-width: 140px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+
+  .header-wardrobe img {
+    border-radius: 6px;
+  }
+
+  .header-wardrobe p {
+    font-size: 11px;
+    max-width: 100px;
+    padding: 3px 0;
+    border-radius: 0 3px 3px 3px;
+  }
+}

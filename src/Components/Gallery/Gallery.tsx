@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import "./style.css";
+import { ImagePreloader } from "../ImagePreloader/ImagePreloader";
 
 export function Gallery() {
   const images = useMemo(
@@ -97,7 +98,7 @@ export function Gallery() {
               key={image.src}
               onClick={() => openModal(index)}
             >
-              <img
+              <ImagePreloader
                 src={image.src}
                 alt={image.alt}
                 loading="lazy"
@@ -156,9 +157,6 @@ export function Gallery() {
             </button>
 
             <div className="gallery-modal-footer">
-              {/* <p className="gallery-modal-counter">
-                {activeIndex + 1} / {images.length}
-              </p> */}
               <div className="gallery-modal-dots">
                 {images.map((image, index) => (
                   <button

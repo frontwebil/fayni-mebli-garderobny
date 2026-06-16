@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import "./style.css";
+import { ImagePreloader } from "../ImagePreloader/ImagePreloader";
 
 export function Testimonials() {
   const testimonials = useMemo(
@@ -53,7 +54,7 @@ export function Testimonials() {
           <div className="line"></div>
         </div>
         <div className="testimonials-tablet">
-          <img
+          <ImagePreloader
             src="/Testimonials/tablet.webp"
             alt="820+ відгуків на Google картах з оцінкою 4,4 - Наша головна нагорода"
             loading="lazy"
@@ -68,7 +69,7 @@ export function Testimonials() {
               onClick={() => setActiveReview(index)}
               aria-label={`Відкрити ${testimonial.alt}`}
             >
-              <img
+              <ImagePreloader
                 src={testimonial.src}
                 alt={testimonial.alt}
                 loading="lazy"
