@@ -26,7 +26,7 @@
   border-radius: 12px;
   padding: 40px 32px;
   max-width: 440px;
-  width: 100%;
+  width: calc(100% - 30px);
   animation: modalSlideUp 0.3s ease;
 }
 
@@ -180,9 +180,9 @@
 @media (max-width: 480px) {
   .contact-modal {
     padding: 32px 20px;
-    border-radius: 12px 12px 0 0;
+    border-radius: 12px;
+
     position: fixed;
-    bottom: 0;
     max-width: 100%;
     animation: modalSlideUpMobile 0.3s ease;
   }
