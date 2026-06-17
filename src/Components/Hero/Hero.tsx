@@ -1,7 +1,11 @@
 import "./style.css";
 import { ImagePreloader } from "../ImagePreloader/ImagePreloader";
 
-export function Hero() {
+interface HeroProps {
+  onOpenContactForm: () => void;
+}
+
+export function Hero({ onOpenContactForm }: HeroProps) {
   return (
     <section className="hero" id="hero" aria-labelledby="hero-title">
       <div className="container">
@@ -51,7 +55,7 @@ export function Hero() {
             </p>
           </div>
         </div>
-        <button className="hero-button">
+        <button className="hero-button" onClick={onOpenContactForm}>
           <img
             src="/Hero/calculator.svg"
             alt=""

@@ -51,7 +51,11 @@ const advantages = [
   },
 ];
 
-export function Advantages() {
+interface AdvantagesProps {
+  onOpenContactForm: () => void;
+}
+
+export function Advantages({ onOpenContactForm }: AdvantagesProps) {
   return (
     <section
       className="advantages"
@@ -68,7 +72,7 @@ export function Advantages() {
 
         <div className="advantages-grid">
           {advantages.map((el) => (
-            <div className="advantages-grid-card">
+            <div className="advantages-grid-card" key={el.title}>
               <div className="advantages-grid-card-img">
                 <img src={el.icon} alt="" />
               </div>
@@ -79,7 +83,7 @@ export function Advantages() {
             </div>
           ))}
         </div>
-        <button className="advantages-button">
+        <button className="advantages-button" onClick={onOpenContactForm}>
           <IoCalendarOutline />
           <p>
             Замовити безкоштовний замір <br />
@@ -88,7 +92,7 @@ export function Advantages() {
         </button>
         <div className="advantages-underbutton-text">
           <GoShieldCheck />
-          <p>Без зобов’язань. Консультація та прорахунок безкоштовно.</p>
+          <p>Без зобов'язань. Консультація та прорахунок безкоштовно.</p>
         </div>
       </div>
     </section>
