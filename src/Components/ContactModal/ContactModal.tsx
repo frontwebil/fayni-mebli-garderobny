@@ -12,6 +12,7 @@ interface ContactModalProps {
 export function ContactModal({ isOpen, onClose, title }: ContactModalProps) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("+380 ");
+  const [isLoading, setIsLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
@@ -30,6 +31,7 @@ export function ContactModal({ isOpen, onClose, title }: ContactModalProps) {
       setName("");
       setPhone("+380 ");
       setSubmitted(false);
+      setIsLoading(false);
     }
   }, [isOpen]);
 
@@ -52,14 +54,16 @@ export function ContactModal({ isOpen, onClose, title }: ContactModalProps) {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!isValid) return;
+    if (!isValid || isLoading) return;
+
+    setIsLoading(true);
 
     try {
       await axios.post(
         "https://kuhni-back.vercel.app/api/sendMessageToTelegramGarderobny",
         {
           name,
-          phone : phone.slice(4 , phone.length),
+          phone: phone.slice(4, phone.length),
         },
         {
           headers: {
@@ -73,6 +77,8 @@ export function ContactModal({ isOpen, onClose, title }: ContactModalProps) {
       setSubmitted(true);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -130,9 +136,10 @@ export function ContactModal({ isOpen, onClose, title }: ContactModalProps) {
               <button
                 type="submit"
                 className="contact-modal-button"
-                disabled={!isValid}
+                disabled={!isValid || isLoading}
               >
-                Відправити
+                {isLoading && <span className="spinner"></span>}
+                {isLoading ? "Відправляємо..." : "Відправити"}
               </button>
             </form>
           </>

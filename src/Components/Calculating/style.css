@@ -317,6 +317,65 @@
   border-color: rgba(181, 123, 66, 1);
 }
 
+/* Success state */
+.calculating-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 4px;
+}
+
+.calculating-success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(181, 123, 66, 0.1);
+  color: rgba(181, 123, 66, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.calculating-success-title {
+  font-family: "PT Serif Caption", serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 140%;
+  color: rgba(63, 49, 33, 1);
+  text-align: center;
+}
+
+.calculating-success-subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: rgba(63, 49, 33, 0.6);
+  text-align: center;
+  max-width: 360px;
+}
+
+/* Spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 768px) {
   .calculating-wrapper-content-text-form {
     grid-template-columns: 1fr;
