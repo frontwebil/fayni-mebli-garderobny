@@ -63,7 +63,7 @@ export function ContactModal({ isOpen, onClose, title }: ContactModalProps) {
         "https://kuhni-back.vercel.app/api/sendMessageToTelegramGarderobny",
         {
           name,
-          phone: phone.slice(4, phone.length),
+          phone: phone.slice(4, phone.length).trim(),
         },
         {
           headers: {
