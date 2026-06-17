@@ -1,6 +1,7 @@
 import { useState, useEffect, type FormEvent } from "react";
 import { IoClose } from "react-icons/io5";
 import "./style.css";
+import axios from "axios";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -49,21 +50,37 @@ export function ContactModal({ isOpen, onClose, title }: ContactModalProps) {
   const phoneDigits = getPhoneDigits(phone);
   const isValid = name.trim().length > 1 && phoneDigits.length === 9;
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!isValid) return;
-    console.log({ title, name, phone });
-    setSubmitted(true);
+
+    try {
+      await axios.post(
+        "https://kuhni-back.vercel.app/api/sendMessageToTelegramGarderobny",
+        {
+          name,
+          phone,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
+
+      setPhone("");
+      setName("");
+      setSubmitted(true);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   if (!isOpen) return null;
 
   return (
     <div className="contact-modal-overlay" onClick={onClose}>
-      <div
-        className="contact-modal"
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className="contact-modal" onClick={(e) => e.stopPropagation()}>
         <button
           type="button"
           className="contact-modal-close"
