@@ -3,6 +3,7 @@ import "./style.css";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa";
 import { ImagePreloader } from "../ImagePreloader/ImagePreloader";
+import axios from "axios";
 
 const TOTAL_STEPS = 6 as const;
 const STEP_KEYS = [
@@ -82,10 +83,27 @@ export function Calculating() {
     return `+380 ${digits}`;
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!isContactStepValid) return;
-    console.log(quizData);
+
+    try {
+      await axios.post(
+        "https://kuhni-back.vercel.app/api/sendMessageToTelegramGarderobny",
+        {
+          name: quizData.name,
+          phone: quizData.phone.slice(4, quizData.phone.length).trim(),
+          quizResaults: quizData,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
