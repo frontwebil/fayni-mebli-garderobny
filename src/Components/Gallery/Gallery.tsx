@@ -103,6 +103,8 @@ export function Gallery() {
                 alt={image.alt}
                 loading="lazy"
                 decoding="async"
+                width={938}
+                height={1088}
               />
             </button>
           ))}

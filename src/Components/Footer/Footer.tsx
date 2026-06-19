@@ -16,6 +16,7 @@ export function Footer() {
           <div className="footer-bottom-content">
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://maps.app.goo.gl/axJffCrgH6MYBTKz7"
               className="footer-bottom-text"
             >
@@ -23,6 +24,7 @@ export function Footer() {
             </a>
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://maps.app.goo.gl/ea9viwE81NzZeGyH6"
               className="footer-bottom-text"
             >
