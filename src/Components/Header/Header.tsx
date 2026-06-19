@@ -1,30 +1,30 @@
 import { IoMdArrowDropright } from "react-icons/io";
 import "./style.css";
 import { LiaPhoneSolid } from "react-icons/lia";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+
+function subscribeToMedia(callback: () => void) {
+  const mql = window.matchMedia("(min-width: 901px)");
+  mql.addEventListener("change", callback);
+  return () => mql.removeEventListener("change", callback);
+}
+
+function getIsDesktop() {
+  return window.matchMedia("(min-width: 901px)").matches;
+}
 
 export function Header() {
   const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const menuRef = useRef<HTMLElement | null>(null);
+
+  const isDesktop = useSyncExternalStore(subscribeToMedia, getIsDesktop, () => true);
+
   const closeMenu = () => {
     setIsOpenBurgerMenu(false);
     setIsOpenMenu(false);
   };
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -45,7 +45,7 @@ export function Header() {
       setScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -56,9 +56,14 @@ export function Header() {
     >
       <div className="container">
         <a href="/" className="header-logo">
-          <img src="/Header/logo.png" alt="Логотип Файні Меблі" />
+          <img
+            src="/Header/logo.png"
+            alt="Логотип Файні Меблі"
+            width="120"
+            height="40"
+          />
         </a>
-        {windowWidth >= 900 && (
+        {isDesktop && (
           <nav className="header-nav">
             <a href="#catalog" className="header-nav-link" onClick={closeMenu}>
               Каталог
@@ -129,7 +134,7 @@ export function Header() {
         )}
 
         <div className="header-right-side">
-          {windowWidth <= 900 && (
+          {!isDesktop && (
             <div
               id="nav-icon3"
               className={`${isOpenBurgerMenu && "open"}`}

@@ -3,7 +3,7 @@ import "./style.css";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa";
 import { ImagePreloader } from "../ImagePreloader/ImagePreloader";
-import axios from "axios";
+
 
 const TOTAL_STEPS = 6 as const;
 const STEP_KEYS = [
@@ -92,17 +92,16 @@ export function Calculating() {
     setIsLoading(true);
 
     try {
-      await axios.post(
+      await fetch(
         "https://kuhni-back.vercel.app/api/sendMessageToTelegramGarderobny",
         {
-          name: quizData.name,
-          phone: quizData.phone.slice(4, quizData.phone.length).trim(),
-          quizResaults: quizData,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: quizData.name,
+            phone: quizData.phone.slice(4, quizData.phone.length).trim(),
+            quizResaults: quizData,
+          }),
         },
       );
 

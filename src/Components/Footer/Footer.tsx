@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="footer-logo">
-          <img src="/logo.png" alt="" />
+          <img src="/logo.png" alt="Файні Меблі" loading="lazy" width="120" height="40" />
         </div>
         <div className="footer-bottom">
           <div className="footer-bottom-content">
