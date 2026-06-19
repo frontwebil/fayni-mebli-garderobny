@@ -53,7 +53,11 @@ export function Catalog() {
 
         <div className="catalog-cards">
           {CatalogData.map((wardrobe) => (
-            <article className="catalog-card" key={wardrobe.id}>
+            <a
+              href={`/productPage/${wardrobe.id}`}
+              className="catalog-card"
+              key={wardrobe.id}
+            >
               <ImagePreloader
                 src={wardrobe.image}
                 alt={wardrobe.title}
@@ -71,7 +75,7 @@ export function Catalog() {
                   </span>
                 </p>
               </div>
-            </article>
+            </a>
           ))}
         </div>
 

@@ -1,0 +1,70 @@
+.WardrobeHero {
+  padding: 104px 0;
+}
+
+.WardrobeHero-left {
+  max-width: 700px;
+  width: 100%;
+}
+.WardrobeHero-left-main-img {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1.42/1;
+  margin-bottom: 7px;
+  border-radius: 4px;
+}
+
+.WardrobeHero-left-main-img img {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1.42/1;
+  border-radius: 4px;
+}
+
+.wardrobe-swiper {
+  width: 100%;
+  padding: 0 0 16px;
+}
+
+.wardrobe-swiper .swiper-wrapper {
+  width: max-content;
+}
+
+.wardrobe-swiper .swiper-slide {
+  width: 110px;
+  height: 110px;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.wardrobe-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: 0.3s;
+}
+
+.wardrobe-swiper .swiper-slide:hover img {
+  transform: scale(1.05);
+}
+
+.wardrobe-swiper .swiper-scrollbar {
+  height: 4px !important;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.wardrobe-swiper .swiper-scrollbar-drag {
+  background: #b57b42;
+}
+
+.wardrobe-swiper .swiper-scrollbar {
+  left: 0 !important;
+  right: 0 !important;
+  width: auto !important;
+}
+
+.wardrobe-swiper {
+  --swiper-scrollbar-sides-offset: 0px;
+}
