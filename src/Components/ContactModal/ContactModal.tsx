@@ -1,7 +1,6 @@
 import { useState, useEffect, type FormEvent } from "react";
 import { IoClose } from "react-icons/io5";
 import "./style.css";
-import axios from "axios";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -59,16 +58,15 @@ export function ContactModal({ isOpen, onClose, title }: ContactModalProps) {
     setIsLoading(true);
 
     try {
-      await axios.post(
+      await fetch(
         "https://kuhni-back.vercel.app/api/sendMessageToTelegramGarderobny",
         {
-          name,
-          phone: phone.slice(4, phone.length).trim(),
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name,
+            phone: phone.slice(4, phone.length).trim(),
+          }),
         },
       );
 

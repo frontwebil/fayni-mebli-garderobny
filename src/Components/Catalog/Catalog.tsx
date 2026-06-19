@@ -64,6 +64,8 @@ export function Catalog() {
                 className="catalog-card-img"
                 loading="lazy"
                 decoding="async"
+                width={480}
+                height={360}
                 wrapperClassName="catalog-card-img-wrapper"
               />
               <div className="catalog-card-text-wrapper">

@@ -8,4 +8,8 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  build: {
+    target: 'es2020',
+    cssMinify: 'lightningcss',
+  },
 })

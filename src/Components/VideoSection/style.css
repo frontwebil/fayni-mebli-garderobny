@@ -20,6 +20,41 @@
   height: 100%;
   border: 0;
 }
+
+.VideoSection-placeholder {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background: #000;
+}
+
+.VideoSection-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.VideoSection-placeholder:hover img {
+  opacity: 1;
+}
+
+.VideoSection-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s;
+}
+
+.VideoSection-placeholder:hover .VideoSection-play-btn {
+  transform: translate(-50%, -50%) scale(1.1);
+}
 .VideoSection-text {
   max-width: 700px;
   width: 100%;
