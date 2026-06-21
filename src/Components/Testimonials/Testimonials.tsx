@@ -74,8 +74,6 @@ export function Testimonials() {
                 alt={testimonial.alt}
                 loading="lazy"
                 decoding="async"
-                width={1170}
-                height={1300}
               />
             </button>
           ))}
