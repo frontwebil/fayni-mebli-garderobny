@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fayni-mebli-garderobny.vercel.app/sitemap.xml

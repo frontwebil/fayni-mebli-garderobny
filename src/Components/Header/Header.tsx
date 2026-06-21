@@ -190,10 +190,10 @@ export function Header() {
           </a>
 
           <div className="header-menu-adresses">
-            <a target="_blank" href="https://maps.app.goo.gl/axJffCrgH6MYBTKz7">
+            <a target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/axJffCrgH6MYBTKz7">
               м. Київ, вул. Святошинська, 1
             </a>
-            <a target="_blank" href="https://maps.app.goo.gl/ea9viwE81NzZeGyH6">
+            <a target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/ea9viwE81NzZeGyH6">
               м. Одеса, вул. Ярослава Мудрого, 29
             </a>
           </div>

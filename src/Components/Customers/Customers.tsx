@@ -18,7 +18,7 @@ export function Customers() {
           {[...Array(20)].map((_, i) => (
             <div className="customer-card" key={i}>
               <img
-                src={`/Customers/${i + 1}.png`}
+                src={`/Customers/${i + 1}.webp`}
                 alt={`Замовник ${i + 1}`}
                 loading="lazy"
                 decoding="async"
