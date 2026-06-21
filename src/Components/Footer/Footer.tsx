@@ -10,12 +10,13 @@ export function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="footer-logo">
-          <img src="/logo.png" alt="" />
+          <img src="/logo.png" alt="Файні Меблі" loading="lazy" width="120" height="40" />
         </div>
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://maps.app.goo.gl/axJffCrgH6MYBTKz7"
               className="footer-bottom-text"
             >
@@ -23,6 +24,7 @@ export function Footer() {
             </a>
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://maps.app.goo.gl/ea9viwE81NzZeGyH6"
               className="footer-bottom-text"
             >

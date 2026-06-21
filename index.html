@@ -15,9 +15,11 @@
     <meta name="author" content="Файні Меблі" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#b57b42" />
+    <link rel="canonical" href="https://fayni-mebli-garderobny.vercel.app/" />
     <meta property="og:locale" content="uk_UA" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Файні Меблі" />
+    <meta property="og:url" content="https://fayni-mebli-garderobny.vercel.app/" />
     <meta
       property="og:title"
       content="Гардеробні на замовлення | Файні Меблі"
@@ -26,6 +28,9 @@
       property="og:description"
       content="Проектуємо та виготовляємо гардеробні під ваш простір та бюджет. Заміри, проект, доставка, монтаж, каталог і реальні фото виконаних гардеробних."
     />
+    <meta property="og:image" content="https://fayni-mebli-garderobny.vercel.app/Hero/bg.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -35,20 +40,109 @@
       name="twitter:description"
       content="Індивідуальні гардеробні під ваш простір і бюджет: каталог, реальні фото, заміри, проект, доставка та монтаж."
     />
+    <meta name="twitter:image" content="https://fayni-mebli-garderobny.vercel.app/Hero/bg.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=PT+Serif+Caption:ital@0;1&display=swap"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=PT+Serif+Caption:ital@0;1&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=PT+Serif+Caption:ital@0;1&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <link
+      rel="preload"
+      as="image"
+      href="/Hero/bg.webp"
+      type="image/webp"
+      fetchpriority="high"
     />
     <title>Гардеробні на замовлення | Файні Меблі</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
+        "@type": "FurnitureStore",
         "name": "Файні Меблі",
-        "inLanguage": "uk-UA",
-        "description": "Проектування та виготовлення гардеробних на замовлення під ваш простір та бюджет."
+        "url": "https://fayni-mebli-garderobny.vercel.app/",
+        "description": "Проектування та виготовлення гардеробних на замовлення під ваш простір та бюджет.",
+        "image": "https://fayni-mebli-garderobny.vercel.app/Hero/bg.webp",
+        "telephone": ["+380974597557", "0800337592"],
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Київ",
+            "streetAddress": "вул. Святошинська, 1",
+            "addressCountry": "UA"
+          },
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Одеса",
+            "streetAddress": "вул. Ярослава Мудрого, 29",
+            "addressCountry": "UA"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.4",
+          "reviewCount": "820",
+          "bestRating": "5"
+        },
+        "sameAs": [
+          "http://facebook.com/faynimebli/",
+          "https://www.instagram.com/fayni.mebli",
+          "https://www.youtube.com/user/faynimebli"
+        ],
+        "inLanguage": "uk-UA"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Чи можна зробити гардеробну в маленькій кімнаті або ніші?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Так, це не проблема. Навіть невеликий простір можна продумати функціонально. Ми проєктуємо гардеробні під конкретні розміри приміщення, щоб максимально використати кожен сантиметр простору."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Скільки коштує гардеробна?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Вартість залежить від розміру, матеріалів, наповнення та фурнітури. Орієнтовно фабрична гардеробна розміром 1600*500*2400 коштуватиме 15000 грн., а індивідуальна 27000 грн. Прорахунок та замір по місту безкоштовно."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Скільки часу займає виготовлення?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "У середньому виготовлення займає від 15 до 35 днів, залежно від складності проєкту та матеріалів."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Чи робите ви доставку та монтаж?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Так. Ми працюємо під ключ: доставка, занесення та професійне збирання. Ми працюємо з власною командою професійних збиральників з досвідом від 5 років!"
+            }
+          }
+        ]
       }
     </script>
   </head>
