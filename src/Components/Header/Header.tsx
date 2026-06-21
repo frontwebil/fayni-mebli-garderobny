@@ -1,203 +1,213 @@
-import { IoMdArrowDropright } from "react-icons/io";
+import { useEffect, useState } from "react";
 import "./style.css";
-import { LiaPhoneSolid } from "react-icons/lia";
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
-
-function subscribeToMedia(callback: () => void) {
-  const mql = window.matchMedia("(min-width: 901px)");
-  mql.addEventListener("change", callback);
-  return () => mql.removeEventListener("change", callback);
-}
-
-function getIsDesktop() {
-  return window.matchMedia("(min-width: 901px)").matches;
-}
+import { Link } from "react-router-dom";
+import { LuSofa } from "react-icons/lu";
 
 export function Header() {
-  const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [isOpenMenu, setIsOpenMenu] = useState(false);
-  const menuRef = useRef<HTMLElement | null>(null);
-
-  const isDesktop = useSyncExternalStore(subscribeToMedia, getIsDesktop, () => true);
-
-  const closeMenu = () => {
-    setIsOpenBurgerMenu(false);
-    setIsOpenMenu(false);
-  };
+  const [isOpenBurger, setIsOpenBurger] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsOpenMenu(false);
-      }
-    };
+    const handleResize = () => setWidth(window.innerWidth);
 
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <header
-      ref={menuRef}
-      className={scrolled || isOpenBurgerMenu ? "scrolled" : ""}
-    >
-      <div className="container">
-        <a href="/" className="header-logo">
-          <img
-            src="/Header/logo.png"
-            alt="Логотип Файні Меблі"
-            width="120"
-            height="40"
-          />
-        </a>
-        {isDesktop && (
-          <nav className="header-nav">
-            <a href="#catalog" className="header-nav-link" onClick={closeMenu}>
-              Каталог
-            </a>
-            <a href="#gallery" className="header-nav-link" onClick={closeMenu}>
-              Галерея
-            </a>
-            <a
-              href="#testimonials"
-              className="header-nav-link"
-              onClick={closeMenu}
-            >
-              Відгуки
-            </a>
-            <a
-              href="#calculating"
-              className="header-nav-link"
-              onClick={closeMenu}
-            >
-              Розрахунок вартості
-            </a>
-            <div className="header-nav-button-menu-wrapper">
-              <button
-                type="button"
-                className={`header-nav-button ${isOpenMenu ? "active" : ""}`}
-                onClick={() => setIsOpenMenu(!isOpenMenu)}
-                aria-expanded={isOpenMenu}
-                aria-controls="header-company-menu"
+    <header className={`${isOpenBurger && "active"}`}>
+      <div className={`header-bg ${isOpenBurger && "active"}`}>
+        <div className={`header-container container`}>
+          <Link to={"/"}>
+            <img src="/logo.png" alt="" />
+          </Link>
+          <div className="header-right">
+            <div className="header-social-icons">
+              <a href="https://t.me/FainiKuhni">
+                <img
+                  src="/footer/tg.svg"
+                  alt=""
+                  className="header-social-icon"
+                />
+              </a>
+              <a href="https://msng.link/o?+380678295889=vi">
+                <img
+                  src="/footer/viber.svg"
+                  alt=""
+                  className="header-social-icon"
+                />
+              </a>
+              <a
+                href="tel:0800-33-78-15"
+                className="telephone text-md font-medium"
               >
-                <p>Про компанію</p>
-                <IoMdArrowDropright />
-              </button>
-              <div
-                id="header-company-menu"
-                className={`header-nav-under-menu ${isOpenMenu ? "visible" : ""}`}
-              >
-                <a
-                  href="#advantages"
-                  className="header-nav-link"
-                  onClick={closeMenu}
-                >
-                  Наші переваги
-                </a>
-                <a
-                  href="#about"
-                  className="header-nav-link"
-                  onClick={closeMenu}
-                >
-                  Про нас
-                </a>
-                <a
-                  href="#customers"
-                  className="header-nav-link"
-                  onClick={closeMenu}
-                >
-                  Наші замовники
-                </a>
-                <a
-                  href="#video-section"
-                  className="header-nav-link"
-                  onClick={closeMenu}
-                >
-                  Відеозвернення
-                </a>
-              </div>
+                0 800-33-78-15
+              </a>
             </div>
-          </nav>
-        )}
-
-        <div className="header-right-side">
-          {!isDesktop && (
             <div
-              id="nav-icon3"
-              className={`${isOpenBurgerMenu && "open"}`}
-              onClick={() => setIsOpenBurgerMenu(!isOpenBurgerMenu)}
+              className={`burger-button ${isOpenBurger && "active"}`}
+              onClick={() => {
+                setIsOpenBurger(!isOpenBurger);
+              }}
             >
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
+              {width < 751 ? (
+                <>
+                  <a
+                    href="tel:0800337592"
+                    className="header-call-button"
+                    style={{ display: !isOpenBurger ? "flex" : "none" }}
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 32 32"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M 8.65625 3 C 8.132813 3 7.617188 3.1875 7.1875 3.53125 L 7.125 3.5625 L 7.09375 3.59375 L 3.96875 6.8125 L 4 6.84375 C 3.035156 7.734375 2.738281 9.066406 3.15625 10.21875 C 3.160156 10.226563 3.152344 10.242188 3.15625 10.25 C 4.003906 12.675781 6.171875 17.359375 10.40625 21.59375 C 14.65625 25.84375 19.402344 27.925781 21.75 28.84375 L 21.78125 28.84375 C 22.996094 29.25 24.3125 28.960938 25.25 28.15625 L 28.40625 25 C 29.234375 24.171875 29.234375 22.734375 28.40625 21.90625 L 24.34375 17.84375 L 24.3125 17.78125 C 23.484375 16.953125 22.015625 16.953125 21.1875 17.78125 L 19.1875 19.78125 C 18.464844 19.433594 16.742188 18.542969 15.09375 16.96875 C 13.457031 15.40625 12.621094 13.609375 12.3125 12.90625 L 14.3125 10.90625 C 15.152344 10.066406 15.167969 8.667969 14.28125 7.84375 L 14.3125 7.8125 L 14.21875 7.71875 L 10.21875 3.59375 L 10.1875 3.5625 L 10.125 3.53125 C 9.695313 3.1875 9.179688 3 8.65625 3 Z M 8.65625 5 C 8.730469 5 8.804688 5.035156 8.875 5.09375 L 12.875 9.1875 L 12.96875 9.28125 C 12.960938 9.273438 13.027344 9.378906 12.90625 9.5 L 10.40625 12 L 9.9375 12.4375 L 10.15625 13.0625 C 10.15625 13.0625 11.304688 16.136719 13.71875 18.4375 L 13.9375 18.625 C 16.261719 20.746094 19 21.90625 19 21.90625 L 19.625 22.1875 L 22.59375 19.21875 C 22.765625 19.046875 22.734375 19.046875 22.90625 19.21875 L 27 23.3125 C 27.171875 23.484375 27.171875 23.421875 27 23.59375 L 23.9375 26.65625 C 23.476563 27.050781 22.988281 27.132813 22.40625 26.9375 C 20.140625 26.046875 15.738281 24.113281 11.8125 20.1875 C 7.855469 16.230469 5.789063 11.742188 5.03125 9.5625 C 4.878906 9.15625 4.988281 8.554688 5.34375 8.25 L 5.40625 8.1875 L 8.4375 5.09375 C 8.507813 5.035156 8.582031 5 8.65625 5 Z"></path>
+                    </svg>
+                  </a>
+                  <>
+                    <div
+                      className="burger-line"
+                      style={{ display: isOpenBurger ? "block" : "none" }}
+                    ></div>
+                    <div
+                      className="burger-line"
+                      style={{ display: isOpenBurger ? "block" : "none" }}
+                    ></div>
+                  </>
+                </>
+              ) : (
+                <>
+                  <div className="burger-line"></div>
+                  <div className="burger-line"></div>
+                  <div className="burger-line"></div>
+                </>
+              )}
             </div>
-          )}
-          <a href="tel:0800337592" className="header-call-button">
-            <LiaPhoneSolid />
-          </a>
+          </div>
         </div>
       </div>
-      <div className={`header-menu ${isOpenBurgerMenu && "open"}`}>
-        <div className="burger-container">
-          <div className="header-menu-contacts">
-            <a href="tel:+380974597557">+38 (097) 459-75-57</a>
-            <a href="tel:0800337592">0800 33 75 92</a>
-          </div>
-          <a href="#catalog" onClick={closeMenu}>
-            Каталог
+      <div className={`burger-menu ${isOpenBurger && "active"}`}>
+        {/* <Link
+          to="/#catalog"
+          className="text-base font-medium nav-links"
+          onClick={() => setIsOpenBurger(false)}
+        >
+          Наші найкращі моделі
+        </Link>
+        <Link
+          to="/#seeMore"
+          className="text-base font-medium nav-links"
+          onClick={() => setIsOpenBurger(false)}
+        >
+          Про компанію
+        </Link>
+        <Link
+          to="/#howBorn"
+          className="text-base font-medium nav-links"
+          onClick={() => setIsOpenBurger(false)}
+        >
+          Як народжується кухня
+        </Link>
+        <Link
+          to="/#testimonials"
+          className="text-base font-medium nav-links"
+          onClick={() => setIsOpenBurger(false)}
+        >
+          Відгуки про нашу роботу
+        </Link>
+        <Link
+          to="/#quiz"
+          className="text-base font-medium nav-links"
+          onClick={() => setIsOpenBurger(false)}
+        >
+          Розрахуйте ціну своєї кухні
+        </Link>
+        <Link
+          to="/#about-us"
+          className="text-base font-medium nav-links"
+          onClick={() => setIsOpenBurger(false)}
+        >
+          Про нас - честно і без прикрас
+        </Link>
+        <Link
+          to="/#partners"
+          className="text-base font-medium nav-links"
+          onClick={() => setIsOpenBurger(false)}
+        >
+          наші замовники
+        </Link>
+        <Link
+          to="/#questions"
+          className="text-base font-medium nav-links"
+          onClick={() => setIsOpenBurger(false)}
+        >
+          найчастіші питання
+        </Link> */}
+        <div className="mobile-header-column">
+          <a href="tel:044-599-69-69" className="font-semiBold">
+            044-599-69-69
           </a>
-
-          <a href="#gallery" onClick={closeMenu}>
-            Галерея
+          <a href="tel:0800-33-78-15" className="font-semiBold">
+            0800-33-78-15
           </a>
-
-          <a href="#testimonials" onClick={closeMenu}>
-            Відгуки
-          </a>
-
-          <a href="#calculating" onClick={closeMenu}>
-            Розрахунок вартості
-          </a>
-
-          <a href="#advantages" onClick={closeMenu}>
-            Наші переваги
-          </a>
-
-          <a href="#about" onClick={closeMenu}>
-            Про нас
-          </a>
-
-          <a href="#customers" onClick={closeMenu}>
-            Наші замовники
-          </a>
-
-          <a href="#video-section" onClick={closeMenu}>
-            Відеозвернення
-          </a>
-
-          <div className="header-menu-adresses">
-            <a target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/axJffCrgH6MYBTKz7">
-              м. Київ, вул. Святошинська, 1
+          <p className="text-base font-semiBold">Тисніть на іконки:</p>
+          <div className="pop-up-icons">
+            <a href="https://msng.link/o?+380678295889=vi">
+              <img src="/icons/vb.svg" alt="" className="icon-social" />
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/ea9viwE81NzZeGyH6">
-              м. Одеса, вул. Ярослава Мудрого, 29
+            <a href="https://t.me/FainiKuhni">
+              <img src="/icons/tg.svg" alt="" className="icon-social" />
+            </a>
+          </div>
+          <a
+            href="https://share.google/sXr6XXfJFFilGf57y"
+            className="text-base font-semiBold"
+          >
+            м. Київ, вул. Святошинська, 1
+          </a>
+          <a
+            href="https://maps.app.goo.gl/YWsi5WFsghdrXNsi9"
+            className="text-base font-semiBold"
+          >
+            м. Одеса, вул. Ярослава Мудрого, 29
+          </a>
+          <div className="footer-links-social">
+            <a href="https://www.facebook.com/faynimebli/">
+              <img
+                src="/footer/fb.svg"
+                alt=""
+                className="footer-links-social-icon"
+              />
+            </a>
+            <a href="https://www.instagram.com/fayni.mebli?igsh=cnRlcGhvbDloYmoy">
+              <img
+                src="/footer/inst.svg"
+                alt=""
+                className="footer-links-social-icon"
+              />
+            </a>
+            <a href="https://www.youtube.com/user/faynimebli">
+              <img
+                src="/footer/yt.svg"
+                alt=""
+                className="footer-links-social-icon"
+              />
             </a>
           </div>
         </div>
+        {width <= 780 && (
+          <Link
+            to="https://fayni-mebli.com/"
+            className="mobile-header-column-link"
+          >
+            <LuSofa />
+            <p>Інші меблі</p>
+          </Link>
+        )}
       </div>
     </header>
   );

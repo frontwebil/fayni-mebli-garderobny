@@ -38,3 +38,108 @@ body {
     height: 2px;
   }
 }
+
+/* GENERIC */
+
+.text-xxl {
+  font-size: 50px;
+  line-height: 60px;
+}
+.text-xl {
+  font-size: 40px;
+}
+.text-lg {
+  font-size: 30px;
+}
+.text-md {
+  font-size: 25px;
+}
+.text-base {
+  font-size: 20px;
+}
+.text-sm {
+  font-size: 18px;
+}
+.text-xs {
+  font-size: 16px;
+}
+.text-xxs {
+  font-size: 14px;
+}
+.text-xxxs {
+  font-size: 12px;
+}
+.font-bold {
+  font-weight: 700 !important;
+}
+
+.font-semiBold {
+  font-weight: 600 !important;
+}
+.white {
+  color: #fff;
+}
+.container {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.gray {
+  color: #7c7c7c;
+}
+
+@media only screen and (max-width: 1100px) {
+  .text-md {
+    font-size: 20px;
+  }
+  .text-xxl {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .text-base {
+    font-size: 16px;
+  }
+  .text-xl {
+    font-size: 30px;
+  }
+  .text-sm {
+    font-size: 16px;
+  }
+  .text-lg {
+    font-size: 20px;
+  }
+  .text-xs {
+    font-size: 14px;
+  }
+  .text-xxs {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .text-lg {
+    font-size: 20px;
+  }
+
+  .text-xxl {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+  .calculationQuiz-card p {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 12px;
+  }
+}
+
+@media only screen and (max-width: 365px) {
+  .text-xs {
+    font-size: 12px;
+  }
+}
