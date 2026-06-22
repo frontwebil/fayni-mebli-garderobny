@@ -1,17 +1,50 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Header } from "../Components/Header/Header";
-import { Catalog } from "../Components/Catalog/Catalog";
 import { Hero } from "../Components/Hero/Hero";
-import { VideoSection } from "../Components/VideoSection/VideoSection";
-import { Gallery } from "../Components/Gallery/Gallery";
-import { Testimonials } from "../Components/Testimonials/Testimonials";
-import { Calculating } from "../Components/Calculating/Calculating";
-import { Advantages } from "../Components/Advantages/Advantages";
-import { AboutUs } from "../Components/About-us/AboutUs";
-import { Customers } from "../Components/Customers/Customers";
-import { Faq } from "../Components/Faq/Faq";
-import { Footer } from "../Components/Footer/Footer";
+import { Catalog } from "../Components/Catalog/Catalog";
 import { ContactModal } from "../Components/ContactModal/ContactModal";
+
+const VideoSection = lazy(() =>
+  import("../Components/VideoSection/VideoSection").then((m) => ({
+    default: m.VideoSection,
+  }))
+);
+const Gallery = lazy(() =>
+  import("../Components/Gallery/Gallery").then((m) => ({
+    default: m.Gallery,
+  }))
+);
+const Testimonials = lazy(() =>
+  import("../Components/Testimonials/Testimonials").then((m) => ({
+    default: m.Testimonials,
+  }))
+);
+const Calculating = lazy(() =>
+  import("../Components/Calculating/Calculating").then((m) => ({
+    default: m.Calculating,
+  }))
+);
+const Advantages = lazy(() =>
+  import("../Components/Advantages/Advantages").then((m) => ({
+    default: m.Advantages,
+  }))
+);
+const AboutUs = lazy(() =>
+  import("../Components/About-us/AboutUs").then((m) => ({
+    default: m.AboutUs,
+  }))
+);
+const Customers = lazy(() =>
+  import("../Components/Customers/Customers").then((m) => ({
+    default: m.Customers,
+  }))
+);
+const Faq = lazy(() =>
+  import("../Components/Faq/Faq").then((m) => ({ default: m.Faq }))
+);
+const Footer = lazy(() =>
+  import("../Components/Footer/Footer").then((m) => ({ default: m.Footer }))
+);
 
 export function Home() {
   const [contactModal, setContactModal] = useState<{
@@ -32,20 +65,24 @@ export function Home() {
           onOpenContactForm={() => openContactModal("Розрахувати вартість")}
         />
         <Catalog />
-        <VideoSection />
-        <Gallery />
-        <Testimonials />
-        <Calculating />
-        <Advantages
-          onOpenContactForm={() =>
-            openContactModal("Замовити безкоштовний замір та 3D візуалізацію")
-          }
-        />
-        <AboutUs />
-        <Customers />
-        <Faq />
+        <Suspense fallback={null}>
+          <VideoSection />
+          <Gallery />
+          <Testimonials />
+          <Calculating />
+          <Advantages
+            onOpenContactForm={() =>
+              openContactModal("Замовити безкоштовний замір та 3D візуалізацію")
+            }
+          />
+          <AboutUs />
+          <Customers />
+          <Faq />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
       <ContactModal
         isOpen={contactModal.open}
         onClose={closeContactModal}
