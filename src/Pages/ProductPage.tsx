@@ -3,6 +3,9 @@ import { ContactModal } from "../Components/ContactModal/ContactModal";
 import { Footer } from "../Components/Footer/Footer";
 import { Header } from "../Components/Header/Header";
 import { WardrobeHero } from "../Components/WardrobeHero/WardrobeHero";
+import { WardrobeDescription } from "../Components/WardrobeDescription/WardrobeDescription";
+import { Gallery } from "../Components/Gallery/Gallery";
+import { Testimonials } from "../Components/Testimonials/Testimonials";
 
 export function ProductPage() {
   const [contactModal, setContactModal] = useState<{
@@ -10,15 +13,20 @@ export function ProductPage() {
     title: string;
   }>({ open: false, title: "" });
 
-  // const openContactModal = (title: string) =>
-  //   setContactModal({ open: true, title });
+  const openContactModal = (title: string) =>
+    setContactModal({ open: true, title });
 
   const closeContactModal = () => setContactModal({ open: false, title: "" });
 
   return (
     <>
       <Header />
-      <WardrobeHero />
+      <WardrobeHero
+        openContactModal={() => openContactModal("Отримати прорахунок")}
+      />
+      <WardrobeDescription />
+      <Gallery />
+      <Testimonials />
       <Footer />
       <ContactModal
         isOpen={contactModal.open}

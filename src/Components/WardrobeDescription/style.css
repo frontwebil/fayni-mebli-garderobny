@@ -1,0 +1,59 @@
+.WardrobeDescription {
+  padding: 60px 0;
+}
+.WardrobeDescription-subTitle {
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+
+  color: #b57b42;
+  padding-bottom: 16px;
+}
+.WardrobeDescription-title {
+  font-family: PT Serif Caption;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 140%;
+  letter-spacing: 0%;
+
+  padding-bottom: 16px;
+}
+.WardrobeDescription-creating {
+  padding-top: 16px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0%;
+}
+.WardrobeDescription-fasad {
+  padding-top: 16px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0%;
+}
+.WardrobeDescription-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+.WardrobeDescription-list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0%;
+}
+.WardrobeDescription-list-item-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  background: #b57b42;
+  color: #fff;
+}

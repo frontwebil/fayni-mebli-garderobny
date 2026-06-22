@@ -1,5 +1,25 @@
 .WardrobeHero {
-  padding: 104px 0;
+  padding: 124px 0 0;
+}
+
+.WardrobeHero .container {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.WardrobeHero-back {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding-bottom: 24px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #3f3121;
+  letter-spacing: 0%;
 }
 
 .WardrobeHero-left {
@@ -46,8 +66,12 @@
   transition: 0.3s;
 }
 
-.wardrobe-swiper .swiper-slide:hover img {
-  transform: scale(1.05);
+.wardrobe-swiper-img {
+  border-radius: 4px;
+  border: 2px solid transparent;
+}
+.wardrobe-swiper-img.active {
+  border: 2px solid #b57b42;
 }
 
 .wardrobe-swiper .swiper-scrollbar {
@@ -67,4 +91,86 @@
 
 .wardrobe-swiper {
   --swiper-scrollbar-sides-offset: 0px;
+}
+
+.WardrobeHero-right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+.WardrobeHero-right-title {
+  font-family: PT Serif Caption;
+  font-weight: 400;
+  font-size: 48px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+.WardrobeHero-right-price {
+  font-family: PT Serif Caption;
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: 0%;
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  padding: 24px 0;
+}
+.WardrobeHero-right-price span {
+  font-size: 44px;
+}
+
+.WardrobeHero-right-button {
+  max-width: 280px;
+  width: 100%;
+  background: #b57b42;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 0;
+
+  box-shadow: 0px 0px 24px 0px #eaa562 inset;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.WardrobeHero-right-button:hover {
+  box-shadow:
+    inset 0 0 32px rgb(255, 190, 120),
+    0 8px 24px rgba(181, 123, 66, 0.4);
+  transform: translateY(-2px);
+}
+
+.WardrobeHero-right-text-description {
+  padding: 32px 0;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  line-height: 120%;
+}
+.WardrobeHero-right-advantages {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-top: 1px solid #3f312114;
+  border-bottom: 1px solid #3f312114;
+}
+.WardrobeHero-right-advantage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
 }
