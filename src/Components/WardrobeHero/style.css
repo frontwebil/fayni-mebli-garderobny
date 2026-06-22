@@ -226,9 +226,9 @@
 }
 
 /* ===== Mobile ===== */
-@media (max-width: 1008px) {
+@media (max-width: 1024px) {
   .WardrobeHero {
-    padding: 70px 0 0;
+    padding: 120px 0 0;
   }
 
   .WardrobeHero-back {
@@ -274,7 +274,7 @@
   }
 
   .WardrobeHero-left-main-img img {
-    aspect-ratio: auto;
+    aspect-ratio: 3 / 2;
     border-radius: 8px;
     width: 100%;
     max-width: 100%;
@@ -351,9 +351,12 @@
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 440px) {
+  .WardrobeHero{
+    padding: 90px 0 0;
+  }
   .WardrobeHero-right-title {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .WardrobeHero-right-price {
@@ -362,7 +365,7 @@
   }
 
   .WardrobeHero-right-price span {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .WardrobeHero-right-button {
