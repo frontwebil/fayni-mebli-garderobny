@@ -6,6 +6,7 @@ import { WardrobeHero } from "../Components/WardrobeHero/WardrobeHero";
 import { WardrobeDescription } from "../Components/WardrobeDescription/WardrobeDescription";
 import { Gallery } from "../Components/Gallery/Gallery";
 import { Testimonials } from "../Components/Testimonials/Testimonials";
+import { ColorsVariants } from "../Components/ColorsVariants/ColorsVariants";
 
 export function ProductPage() {
   const [contactModal, setContactModal] = useState<{
@@ -25,6 +26,7 @@ export function ProductPage() {
         openContactModal={() => openContactModal("Отримати прорахунок")}
       />
       <WardrobeDescription />
+      <ColorsVariants />
       <Gallery />
       <Testimonials />
       <Footer />

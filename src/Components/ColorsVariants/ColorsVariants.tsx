@@ -52,6 +52,7 @@ export function ColorsVariants() {
             </div>
           ))}
         </div>
+        <p className="ColorsVariants-alert">* Кольори можуть незначно відрізнятися в залежності від екрану.</p>
       </div>
     </section>
   );
