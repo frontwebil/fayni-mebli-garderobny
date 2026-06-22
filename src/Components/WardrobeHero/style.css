@@ -106,6 +106,10 @@
   letter-spacing: 0%;
   vertical-align: middle;
 }
+.WardrobeHero-right-mobile-flex {
+  display: flex;
+  flex-direction: column;
+}
 .WardrobeHero-right-price {
   font-family: PT Serif Caption;
   font-weight: 400;
@@ -173,4 +177,175 @@
   letter-spacing: 0%;
   text-align: center;
   vertical-align: middle;
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 1024px) {
+  .WardrobeHero {
+    padding: 100px 0 0;
+  }
+
+  .WardrobeHero .container {
+    gap: 24px;
+  }
+
+  .WardrobeHero-right-title {
+    font-size: 36px;
+  }
+
+  .WardrobeHero-right-price {
+    font-size: 22px;
+    padding: 18px 0;
+  }
+
+  .WardrobeHero-right-price span {
+    font-size: 34px;
+  }
+
+  .wardrobe-swiper .swiper-slide {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .WardrobeHero {
+    padding: 70px 0 0;
+  }
+
+  .WardrobeHero-back {
+    padding-bottom: 16px;
+    font-size: 14px;
+  }
+
+  /* Flatten the second container into a single-column grid
+     so we can reorder title above images */
+  .WardrobeHero .container:last-child {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .WardrobeHero-right {
+    display: contents;
+  }
+
+  /* Title first */
+  .WardrobeHero-right-title {
+    order: 1;
+    font-size: 24px;
+    line-height: 130%;
+    margin-bottom: 16px;
+  }
+
+  /* Then images */
+  .WardrobeHero-left {
+    order: 2;
+    max-width: 100%;
+  }
+
+  .WardrobeHero-left-main-img {
+    aspect-ratio: auto;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .WardrobeHero-left-main-img img {
+    aspect-ratio: auto;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+  }
+
+  .wardrobe-swiper .swiper-slide {
+    width: 64px;
+    height: 64px;
+    border-radius: 4px;
+  }
+
+  /* Price + Button row */
+  .WardrobeHero-right-mobile-flex {
+    order: 3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 4px;
+  }
+
+  .WardrobeHero-right-price {
+    font-size: 16px;
+    padding: 12px 0;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .WardrobeHero-right-price span {
+    font-size: 24px;
+  }
+
+  .WardrobeHero-right-button {
+    max-width: 200px;
+    padding: 14px 16px;
+    font-size: 13px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  /* Description */
+  .WardrobeHero-right-text-description {
+    order: 4;
+    padding: 20px 0;
+    font-size: 13px;
+    line-height: 140%;
+  }
+
+  /* Advantages */
+  .WardrobeHero-right-advantages {
+    order: 5;
+    gap: 8px;
+    padding: 14px 0;
+  }
+
+  .WardrobeHero-right-advantage {
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .WardrobeHero-right-advantage img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 420px) {
+  .WardrobeHero-right-title {
+    font-size: 20px;
+  }
+
+  .WardrobeHero-right-price {
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  .WardrobeHero-right-price span {
+    font-size: 20px;
+  }
+
+  .WardrobeHero-right-button {
+    max-width: 170px;
+    padding: 12px 12px;
+    font-size: 12px;
+  }
+
+  .WardrobeHero-right-advantage {
+    font-size: 10px;
+  }
+
+  .WardrobeHero-right-advantage img {
+    width: 24px;
+    height: 24px;
+  }
 }

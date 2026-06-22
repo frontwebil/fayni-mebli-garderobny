@@ -56,4 +56,48 @@
   border-radius: 100%;
   background: #b57b42;
   color: #fff;
+  flex-shrink: 0;
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 1024px) {
+  .WardrobeDescription {
+    padding: 48px 0;
+  }
+
+  .WardrobeDescription-title {
+    font-size: 36px;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .WardrobeDescription {
+    padding: 32px 0;
+  }
+
+  .WardrobeDescription-subTitle {
+    font-size: 13px;
+    padding-bottom: 10px;
+  }
+
+  .WardrobeDescription-title {
+    font-size: 24px;
+    padding-bottom: 10px;
+  }
+
+  .WardrobeDescription-creating,
+  .WardrobeDescription-fasad {
+    font-size: 14px;
+    padding-top: 12px;
+  }
+
+  .WardrobeDescription-list {
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .WardrobeDescription-list-item {
+    font-size: 14px;
+  }
 }
