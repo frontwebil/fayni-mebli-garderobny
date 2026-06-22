@@ -12,6 +12,7 @@ import { Customers } from "../Components/Customers/Customers";
 import { Faq } from "../Components/Faq/Faq";
 import { Footer } from "../Components/Footer/Footer";
 import { ContactModal } from "../Components/ContactModal/ContactModal";
+import { ColorsVariants } from "../Components/ColorsVariants/ColorsVariants";
 
 export function Home() {
   const [contactModal, setContactModal] = useState<{
@@ -32,6 +33,7 @@ export function Home() {
           onOpenContactForm={() => openContactModal("Розрахувати вартість")}
         />
         <Catalog />
+        <ColorsVariants />
         <VideoSection />
         <Gallery />
         <Testimonials />
