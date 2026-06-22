@@ -179,6 +179,23 @@
   vertical-align: middle;
 }
 
+@media (max-width: 1200px) {
+  .WardrobeHero-left {
+    max-width: 500px;
+  }
+  .WardrobeHero-right-title {
+    font-size: 36px;
+  }
+
+  .WardrobeHero-right-price {
+    padding: 6px 0 16px;
+  }
+
+  .WardrobeHero-right-price span {
+    font-size: 32px;
+  }
+}
+
 /* ===== Tablet ===== */
 @media (max-width: 1024px) {
   .WardrobeHero {
@@ -209,7 +226,7 @@
 }
 
 /* ===== Mobile ===== */
-@media (max-width: 768px) {
+@media (max-width: 1008px) {
   .WardrobeHero {
     padding: 70px 0 0;
   }
@@ -242,7 +259,7 @@
   /* Then images */
   .WardrobeHero-left {
     order: 2;
-    max-width: 100%;
+    max-width: 1000px;
   }
 
   .WardrobeHero-left-main-img {

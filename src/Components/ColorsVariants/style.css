@@ -80,6 +80,7 @@
 }
 
 /* Tablet */
+
 @media (max-width: 1024px) {
   .ColorsVariants {
     padding: 80px 0;
