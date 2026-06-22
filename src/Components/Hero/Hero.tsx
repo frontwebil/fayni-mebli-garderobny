@@ -8,6 +8,17 @@ interface HeroProps {
 export function Hero({ onOpenContactForm }: HeroProps) {
   return (
     <section className="hero" id="hero" aria-labelledby="hero-title">
+      <picture>
+        <source media="(max-width: 600px)" srcSet="/Hero/bg-mobile.webp" />
+        <img
+          src="/Hero/bg.webp"
+          alt=""
+          aria-hidden="true"
+          className="hero-bg"
+          fetchPriority="high"
+          decoding="async"
+        />
+      </picture>
       <div className="container">
         <div className="hero-text-wrapper">
           <h1 className="hero-text-wrapper-title" id="hero-title">

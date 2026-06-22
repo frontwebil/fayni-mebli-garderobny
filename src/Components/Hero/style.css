@@ -1,8 +1,15 @@
 .hero {
-  background-image: url("/Hero/bg.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .hero .container {
@@ -205,9 +212,7 @@
     width: 100%;
     height: 1px;
   }
-  .hero {
-    background-image: url("/Hero/bg-mobile.webp");
-  }
+
   .hero .container {
     padding-top: 80px;
     padding-bottom: 40px;

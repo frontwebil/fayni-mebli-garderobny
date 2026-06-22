@@ -2,19 +2,23 @@ import { useEffect, useMemo, useState } from "react";
 import "./style.css";
 import { ImagePreloader } from "../ImagePreloader/ImagePreloader";
 
+const INITIAL_COUNT = 6;
+
 export function Gallery() {
   const images = useMemo(
     () =>
-      [...Array(6)].map((_, index) => ({
+      [...Array(14)].map((_, index) => ({
         src: `/Gallery/${index + 1}.webp`,
         alt: `Фото галереї ${index + 1}`,
       })),
     []
   );
 
+  const [showAll, setShowAll] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
+  const visibleImages = showAll ? images : images.slice(0, INITIAL_COUNT);
   const isModalOpen = activeIndex !== null;
 
   const openModal = (index: number) => {
@@ -91,7 +95,7 @@ export function Gallery() {
           </p>
         </div>
         <div className="gallery-cards">
-          {images.map((image, index) => (
+          {visibleImages.map((image, index) => (
             <button
               type="button"
               className="gallery-card"
@@ -107,7 +111,14 @@ export function Gallery() {
             </button>
           ))}
         </div>
-        <button className="gallery-button">Переглянути більше робіт</button>
+        {!showAll && (
+          <button
+            className="gallery-button"
+            onClick={() => setShowAll(true)}
+          >
+            Переглянути більше робіт
+          </button>
+        )}
       </div>
 
       {isModalOpen && activeIndex !== null && (
