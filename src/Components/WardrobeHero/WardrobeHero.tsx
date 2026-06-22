@@ -70,6 +70,8 @@ export function WardrobeHero({
                 <img
                   src={image}
                   alt={`Гардеробна ${index + 1}`}
+                  loading="lazy"
+                  decoding="async"
                   onClick={() => setCurrentImgId(index)}
                   className={`wardrobe-swiper-img ${index == currentImgId && "active"}`}
                 />
