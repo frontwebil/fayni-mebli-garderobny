@@ -142,10 +142,12 @@ header.active {
   transform: translateY(0);
   opacity: 1;
   color: #424349;
+
+  transition: all 0.3s ease;
 }
 
 .burger-menu a:hover {
-  color: #7596bc;
+  color: #b57b42;
 }
 .mobile-header-column {
   display: flex;
@@ -238,7 +240,7 @@ header.active {
   }
 
   .header-container {
-    padding: 10px 20px 10px!important;
+    padding: 10px 20px 10px !important;
   }
 }
 
