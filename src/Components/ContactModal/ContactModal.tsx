@@ -121,7 +121,6 @@ export function ContactModal({ isOpen, onClose, title }: ContactModalProps) {
                 placeholder="Ваше ім'я"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                autoFocus
               />
               <input
                 type="tel"
