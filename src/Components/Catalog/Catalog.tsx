@@ -5,39 +5,34 @@ const CatalogData = [
   {
     id: 1,
     image: "/Catalog/1.webp",
-    title: "Сучасна гардеробна",
-    price: "24 800",
+    title: "Вбудована пряма гардеробна з підсвіткою",
+    price: "33 000",
   },
   {
     id: 2,
-    image: "/Catalog/2.webp",
-    title: "Класична гардеробна",
-    price: "32 900",
+    image: "/Catalog/21.webp",
+    title: "Кутова фабрична гардеробна з підсвіткою",
+    price: "65 900",
   },
   {
     id: 3,
     image: "/Catalog/3.webp",
-    title: "Преміум гардеробна П-подібна з островом",
-    price: "58 500",
+    title: "Вбудована гардеробна в передпокій з підсвіткою",
+    price: "38 900",
   },
   {
     id: 4,
     image: "/Catalog/4.webp",
-    title: "Гардеробна на мансарду Кутова",
-    price: "22 700",
+    title: "Мінімалістична кутова гардеробна в світлому кольорі",
+    price: "49 320",
   },
   {
     id: 5,
-    image: "/Catalog/5.webp",
-    title: "Світла гардеробна Паралельна",
-    price: "28 400",
+    image: "/Catalog/51.webp",
+    title: "Класична біла гардеробна з золотою фурнітурою та дзеркалами",
+    price: "190 000",
   },
-  {
-    id: 6,
-    image: "/Catalog/6.webp",
-    title: "Стильна гардеробна Кутова",
-    price: "35 900",
-  },
+
 ];
 
 export function Catalog() {

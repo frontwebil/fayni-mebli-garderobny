@@ -43,6 +43,7 @@ export function WardrobeHero({
                 autoPlay
                 controls
                 playsInline
+                muted
                 className="WardrobeHero-main-video"
               />
             ) : (
@@ -67,9 +68,7 @@ export function WardrobeHero({
                   onClick={() => handleThumbClick(index)}
                 >
                   <img
-                    src={
-                      item.type === "video" ? item.thumb : item.src
-                    }
+                    src={item.type === "video" ? item.thumb : item.src}
                     alt={`${wardrobe.title} ${index + 1}`}
                     loading="lazy"
                     decoding="async"

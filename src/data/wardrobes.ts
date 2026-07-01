@@ -34,8 +34,6 @@ export const wardrobes: Wardrobe[] = [
         src: "/wardrobesImages/1/1.mp4",
         thumb: "/wardrobesImages/1/video-thumb.webp",
       },
-      { type: "image", src: "/wardrobesImages/1/2.webp" },
-      { type: "image", src: "/wardrobesImages/1/3.webp" },
     ],
   },
   {
@@ -80,8 +78,6 @@ export const wardrobes: Wardrobe[] = [
         src: "/wardrobesImages/3/1.mp4",
         thumb: "/wardrobesImages/3/video-thumb.webp",
       },
-      { type: "image", src: "/wardrobesImages/3/2.webp" },
-      { type: "image", src: "/wardrobesImages/3/3.webp" },
     ],
   },
   {
@@ -105,8 +101,6 @@ export const wardrobes: Wardrobe[] = [
         src: "/wardrobesImages/4/1.mp4",
         thumb: "/wardrobesImages/4/video-thumb.webp",
       },
-      { type: "image", src: "/wardrobesImages/4/2.webp" },
-      { type: "image", src: "/wardrobesImages/4/3.webp" },
     ],
   },
   {
