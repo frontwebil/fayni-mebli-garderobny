@@ -55,6 +55,10 @@ export const wardrobes: Wardrobe[] = [
       { type: "image", src: "/wardrobesImages/2/2.webp" },
       { type: "image", src: "/wardrobesImages/2/3.webp" },
       { type: "image", src: "/wardrobesImages/2/4.webp" },
+      { type: "image", src: "/wardrobesImages/2/5.webp" },
+      { type: "image", src: "/wardrobesImages/2/6.webp" },
+      { type: "image", src: "/wardrobesImages/2/7.webp" },
+      { type: "image", src: "/wardrobesImages/2/8.webp" },
     ],
   },
   {

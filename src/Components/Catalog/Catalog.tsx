@@ -10,7 +10,7 @@ const CatalogData = [
   },
   {
     id: 2,
-    image: "/Catalog/21.webp",
+    image: "/Catalog/2.webp",
     title: "Кутова фабрична гардеробна з підсвіткою",
     price: "65 900",
   },
@@ -28,7 +28,7 @@ const CatalogData = [
   },
   {
     id: 5,
-    image: "/Catalog/51.webp",
+    image: "/Catalog/5.webp",
     title: "Класична біла гардеробна з золотою фурнітурою та дзеркалами",
     price: "190 000",
   },
