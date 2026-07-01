@@ -9,6 +9,9 @@ export function WardrobeDescription({ wardrobe }: { wardrobe: Wardrobe }) {
         <h3 className="WardrobeDescription-subTitle">опис гардеробної</h3>
         <h3 className="WardrobeDescription-title">{wardrobe.title}</h3>
         <div className="line"></div>
+        <p className="WardrobeDescription-size">
+          <strong>Розмір:</strong> {wardrobe.size}
+        </p>
         <div className="WardrobeDescription-text">
           {wardrobe.description.split("\n\n").map((paragraph, index) => (
             <p key={index} className="WardrobeDescription-paragraph">
@@ -16,9 +19,7 @@ export function WardrobeDescription({ wardrobe }: { wardrobe: Wardrobe }) {
             </p>
           ))}
         </div>
-        <p className="WardrobeDescription-size">
-          <strong>Розмір:</strong> {wardrobe.size}
-        </p>
+
         <ul className="WardrobeDescription-list">
           {wardrobe.features.map((feature, index) => (
             <li key={index} className="WardrobeDescription-list-item">
