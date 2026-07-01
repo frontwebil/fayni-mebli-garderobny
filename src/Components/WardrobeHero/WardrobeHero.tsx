@@ -5,41 +5,25 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 
 import "./style.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
-
-const images = [
-  "/wardrobesImages/1/1.webp",
-  "/wardrobesImages/1/2.webp",
-  "/wardrobesImages/1/3.webp",
-
-  "/wardrobesImages/1/1.webp",
-  "/wardrobesImages/1/2.webp",
-  "/wardrobesImages/1/3.webp",
-
-  "/wardrobesImages/1/1.webp",
-  "/wardrobesImages/1/2.webp",
-  "/wardrobesImages/1/3.webp",
-
-  "/wardrobesImages/1/1.webp",
-  "/wardrobesImages/1/2.webp",
-  "/wardrobesImages/1/3.webp",
-
-  "/wardrobesImages/1/1.webp",
-  "/wardrobesImages/1/2.webp",
-  "/wardrobesImages/1/3.webp",
-
-  "/wardrobesImages/1/1.webp",
-  "/wardrobesImages/1/2.webp",
-  "/wardrobesImages/1/3.webp",
-];
+import type { Wardrobe, MediaItem } from "../../data/wardrobes";
 
 export function WardrobeHero({
+  wardrobe,
   openContactModal,
 }: {
+  wardrobe: Wardrobe;
   openContactModal: () => void;
 }) {
-  const [currentImgId, setCurrentImgId] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const currentItem: MediaItem = wardrobe.media[currentIndex];
+
+  const handleThumbClick = (index: number) => {
+    setCurrentIndex(index);
+  };
 
   return (
     <section className="WardrobeHero">
@@ -52,7 +36,18 @@ export function WardrobeHero({
       <div className="container">
         <div className="WardrobeHero-left">
           <div className="WardrobeHero-left-main-img">
-            <img src={images[currentImgId]} alt="" />
+            {currentItem.type === "video" ? (
+              <video
+                ref={videoRef}
+                src={currentItem.src}
+                autoPlay
+                controls
+                playsInline
+                className="WardrobeHero-main-video"
+              />
+            ) : (
+              <img src={currentItem.src} alt={wardrobe.title} />
+            )}
           </div>
           <Swiper
             slidesPerView={"auto"}
@@ -65,27 +60,51 @@ export function WardrobeHero({
             modules={[Scrollbar, FreeMode]}
             className="wardrobe-swiper"
           >
-            {images.map((image, index) => (
+            {wardrobe.media.map((item, index) => (
               <SwiperSlide key={index}>
-                <img
-                  src={image}
-                  alt={`Гардеробна ${index + 1}`}
-                  loading="lazy"
-                  decoding="async"
-                  onClick={() => setCurrentImgId(index)}
-                  className={`wardrobe-swiper-img ${index == currentImgId && "active"}`}
-                />
+                <div
+                  className={`wardrobe-swiper-thumb ${index === currentIndex ? "active" : ""}`}
+                  onClick={() => handleThumbClick(index)}
+                >
+                  <img
+                    src={
+                      item.type === "video" ? item.thumb : item.src
+                    }
+                    alt={`${wardrobe.title} ${index + 1}`}
+                    loading="lazy"
+                    decoding="async"
+                    className="wardrobe-swiper-img"
+                  />
+                  {item.type === "video" && (
+                    <div className="wardrobe-swiper-play-overlay">
+                      <svg
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="wardrobe-play-icon"
+                      >
+                        <circle
+                          cx="24"
+                          cy="24"
+                          r="23"
+                          fill="rgba(0,0,0,0.5)"
+                          stroke="white"
+                          strokeWidth="2"
+                        />
+                        <path d="M19 14L35 24L19 34V14Z" fill="white" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
         <div className="WardrobeHero-right">
-          <h1 className="WardrobeHero-right-title">
-            Світла гардеробна П-подібна
-          </h1>
+          <h1 className="WardrobeHero-right-title">{wardrobe.title}</h1>
           <div className="WardrobeHero-right-mobile-flex">
             <h3 className="WardrobeHero-right-price">
-              від <span>28 400</span> грн.
+              від <span>{wardrobe.price}</span> грн.
             </h3>
             <button
               className="WardrobeHero-right-button"
@@ -95,12 +114,7 @@ export function WardrobeHero({
             </button>
           </div>
           <p className="WardrobeHero-right-text-description">
-            Світло гардеробне у сучасному стилі з м’яким окресом, LED-підсвіткою
-            та продуманим естетичним об’ємом. <br />
-            <br />
-            Ідеальне рішення для тих, хто цінує порядок, естетику та комфорт у
-            кожній деталі. Місія полиць, функцій та витончена економність зручно
-            розмістити весь гардероб і аксесуари.
+            {wardrobe.description.split("\n\n").slice(0, 2).join("\n\n")}
           </p>
           <div className="WardrobeHero-right-advantages">
             <div className="WardrobeHero-right-advantage">
