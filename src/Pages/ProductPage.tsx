@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useParams, Navigate } from "react-router-dom";
 import { ContactModal } from "../Components/ContactModal/ContactModal";
 import { Footer } from "../Components/Footer/Footer";
 import { Header } from "../Components/Header/Header";
@@ -7,8 +8,12 @@ import { WardrobeDescription } from "../Components/WardrobeDescription/WardrobeD
 import { Gallery } from "../Components/Gallery/Gallery";
 import { Testimonials } from "../Components/Testimonials/Testimonials";
 import { ColorsVariants } from "../Components/ColorsVariants/ColorsVariants";
+import { getWardrobeById } from "../data/wardrobes";
 
 export function ProductPage() {
+  const { id } = useParams<{ id: string }>();
+  const wardrobe = getWardrobeById(Number(id));
+
   const [contactModal, setContactModal] = useState<{
     open: boolean;
     title: string;
@@ -19,13 +24,18 @@ export function ProductPage() {
 
   const closeContactModal = () => setContactModal({ open: false, title: "" });
 
+  if (!wardrobe) {
+    return <Navigate to="/" replace />;
+  }
+
   return (
     <>
       <Header />
       <WardrobeHero
+        wardrobe={wardrobe}
         openContactModal={() => openContactModal("Отримати прорахунок")}
       />
-      <WardrobeDescription />
+      <WardrobeDescription wardrobe={wardrobe} />
       <ColorsVariants />
       <Gallery />
       <Testimonials />
