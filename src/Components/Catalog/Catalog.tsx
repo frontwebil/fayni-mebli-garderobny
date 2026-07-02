@@ -1,44 +1,6 @@
 import "./style.css";
 import { ImagePreloader } from "../ImagePreloader/ImagePreloader";
-
-const CatalogData = [
-  {
-    id: 1,
-    image: "/Catalog/1.webp",
-    title: "Сучасна гардеробна",
-    price: "24 800",
-  },
-  {
-    id: 2,
-    image: "/Catalog/2.webp",
-    title: "Класична гардеробна",
-    price: "32 900",
-  },
-  {
-    id: 3,
-    image: "/Catalog/3.webp",
-    title: "Преміум гардеробна П-подібна з островом",
-    price: "58 500",
-  },
-  {
-    id: 4,
-    image: "/Catalog/4.webp",
-    title: "Гардеробна на мансарду Кутова",
-    price: "22 700",
-  },
-  {
-    id: 5,
-    image: "/Catalog/5.webp",
-    title: "Світла гардеробна Паралельна",
-    price: "28 400",
-  },
-  {
-    id: 6,
-    image: "/Catalog/6.webp",
-    title: "Стильна гардеробна Кутова",
-    price: "35 900",
-  },
-];
+import { wardrobes } from "../../data/wardrobes";
 
 export function Catalog() {
   return (
@@ -52,14 +14,14 @@ export function Catalog() {
         </div>
 
         <div className="catalog-cards">
-          {CatalogData.map((wardrobe) => (
+          {wardrobes.map((wardrobe) => (
             <a
               href={`/productPage/${wardrobe.id}`}
               className="catalog-card"
               key={wardrobe.id}
             >
               <ImagePreloader
-                src={wardrobe.image}
+                src={wardrobe.catalogImage}
                 alt={wardrobe.title}
                 className="catalog-card-img"
                 loading="lazy"
@@ -80,8 +42,6 @@ export function Catalog() {
             </a>
           ))}
         </div>
-
-        <button className="catalog-see-more">Дивитись ще</button>
       </div>
     </section>
   );
