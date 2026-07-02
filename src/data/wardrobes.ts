@@ -225,10 +225,7 @@ export const wardrobes: Wardrobe[] = [
       "Доступна в різних декорах",
       "Гарантія 24 місяці",
     ],
-    media: [
-      { type: "image", src: "/wardrobesImages/9/1.webp" },
-      { type: "image", src: "/wardrobesImages/9/2.webp" },
-    ],
+    media: [{ type: "image", src: "/wardrobesImages/9/1.webp" }],
     catalogImage: "/Catalog/9.webp",
   },
   {
@@ -246,10 +243,7 @@ export const wardrobes: Wardrobe[] = [
       "Доступна в різних декорах",
       "Гарантія 24 місяці",
     ],
-    media: [
-      { type: "image", src: "/wardrobesImages/10/1.webp" },
-      { type: "image", src: "/wardrobesImages/10/2.webp" },
-    ],
+    media: [{ type: "image", src: "/wardrobesImages/10/1.webp" }],
     catalogImage: "/Catalog/10.webp",
   },
 ];
