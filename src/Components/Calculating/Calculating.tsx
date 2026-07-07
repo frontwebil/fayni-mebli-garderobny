@@ -277,11 +277,11 @@ export function Calculating() {
                     </p>
                     <div className="calculating-wrapper-grid">
                       {[
-                        { label: "Warm Scandinavian", img: "/Calculating/style-1.webp" },
-                        { label: "Світлий мінімалізм", img: "/Calculating/style-2.webp" },
-                        { label: "Темна преміум", img: "/Calculating/style-3.webp" },
-                        { label: "Класика", img: "/Calculating/style-4.webp" },
-                        { label: "Сучасний luxury", img: "/Calculating/style-5.webp" },
+                        { label: "Сучасний", img: "/Calculating/style-1.webp" },
+                        { label: "Мінімалізм", img: "/Calculating/style-2.webp" },
+                        { label: "Скандинавський", img: "/Calculating/style-3.webp" },
+                        { label: "Лофт", img: "/Calculating/style-4.webp" },
+                        { label: "Класичний", img: "/Calculating/style-5.webp" },
                       ].map((item) => (
                         <button
                           key={item.label}
