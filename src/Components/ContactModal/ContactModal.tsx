@@ -111,7 +111,7 @@ export function ContactModal({ isOpen, onClose, title }: ContactModalProps) {
           </div>
         ) : (
           <>
-            <h3 className="contact-modal-title">{title}</h3>
+            <h3 className="contact-modal-title">Зв'яжіться з нами!</h3>
 
             <div className="contact-modal-phones">
               <a href="tel:0800337815" className="contact-modal-phone">
