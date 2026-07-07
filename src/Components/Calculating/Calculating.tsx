@@ -166,8 +166,7 @@ export function Calculating() {
                       Який тип гардеробної вас цікавить?
                     </p>
                     <div className="calculating-wrapper-grid">
-                      <button
-                        type="button"
+                      <div
                         className={`calculating-wrapper-grid-card ${
                           quizData.type === "Пряма" ? "selected" : ""
                         }`}
@@ -190,9 +189,8 @@ export function Calculating() {
                         <p className="calculating-wrapper-grid-card-text">
                           Пряма
                         </p>
-                      </button>
-                      <button
-                        type="button"
+                      </div>
+                      <div
                         className={`calculating-wrapper-grid-card ${
                           quizData.type === "Кутова" ? "selected" : ""
                         }`}
@@ -215,9 +213,8 @@ export function Calculating() {
                         <p className="calculating-wrapper-grid-card-text">
                           Кутова
                         </p>
-                      </button>
-                      <button
-                        type="button"
+                      </div>
+                      <div
                         className={`calculating-wrapper-grid-card ${
                           quizData.type === "П-подібна" ? "selected" : ""
                         }`}
@@ -240,9 +237,8 @@ export function Calculating() {
                         <p className="calculating-wrapper-grid-card-text">
                           П-подібна
                         </p>
-                      </button>
-                      <button
-                        type="button"
+                      </div>
+                      <div
                         className={`calculating-wrapper-grid-card ${
                           quizData.type === "Ще не знаю" ? "selected" : ""
                         }`}
@@ -265,7 +261,7 @@ export function Calculating() {
                         <p className="calculating-wrapper-grid-card-text">
                           Ще не знаю
                         </p>
-                      </button>
+                      </div>
                     </div>
                   </>
                 )}
@@ -375,9 +371,8 @@ export function Calculating() {
                         ["10+м2", "10+м2"],
                         ["Не знаю", "Не знаю"],
                       ].map(([label, value]) => (
-                        <button
+                        <div
                           key={value}
-                          type="button"
                           className={`calculating-wrapper-column-button ${
                             quizData.size === value ? "selected" : ""
                           }`}
@@ -389,7 +384,7 @@ export function Calculating() {
                               <FaCheck />
                             </div>
                           )}
-                        </button>
+                        </div>
                       ))}
                     </div>
                   </>
