@@ -112,9 +112,40 @@ export function ContactModal({ isOpen, onClose, title }: ContactModalProps) {
         ) : (
           <>
             <h3 className="contact-modal-title">{title}</h3>
+
+            <div className="contact-modal-phones">
+              <a href="tel:0800337815" className="contact-modal-phone">
+                0800-33-78-15
+              </a>
+              <a href="tel:0445996969" className="contact-modal-phone">
+                044-599-69-69
+              </a>
+            </div>
+
+            <p className="contact-modal-icons-label">Тисніть на іконки:</p>
+            <div className="contact-modal-socials">
+              <a
+                href="https://msng.link/o?+380678295889=vi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-modal-social-link"
+              >
+                <img src="/icons/vb.svg" alt="Viber" className="contact-modal-social-icon" />
+              </a>
+              <a
+                href="https://t.me/FainiKuhni"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-modal-social-link"
+              >
+                <img src="/icons/tg.svg" alt="Telegram" className="contact-modal-social-icon" />
+              </a>
+            </div>
+
             <p className="contact-modal-subtitle">
-              Залиште свої контактні дані і ми зв'яжемося з вами
+              Або залиште свої контактні дані і ми зв'яжемося з вами
             </p>
+
             <form className="contact-modal-form" onSubmit={handleSubmit}>
               <input
                 type="text"
