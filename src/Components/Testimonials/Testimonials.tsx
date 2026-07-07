@@ -5,7 +5,7 @@ import { ImagePreloader } from "../ImagePreloader/ImagePreloader";
 export function Testimonials() {
   const testimonials = useMemo(
     () =>
-      [...Array(8)].map((_, index) => ({
+      [...Array(6)].map((_, index) => ({
         src: `/Testimonials/${index + 1}.webp`,
         alt: `Відгук ${index + 1}`,
       })),
