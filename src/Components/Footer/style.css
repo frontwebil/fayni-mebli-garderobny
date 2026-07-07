@@ -79,43 +79,32 @@
   opacity: 0.8;
 }
 
-/* Messenger badges */
-.footer-messenger-badges {
+/* Messenger icons */
+.footer-messenger-icons {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
-.footer-messenger-badge {
-  display: inline-flex;
+.footer-messenger-icon {
+  display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-family: Manrope;
-  font-weight: 600;
-  font-size: 15px;
-  color: #fff;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
 }
 
-.footer-messenger-badge:hover {
-  opacity: 0.85;
-  transform: translateY(-1px);
+.footer-messenger-icon:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.08);
 }
 
-.footer-messenger-badge img {
-  width: 22px;
-  height: 22px;
-}
-
-.footer-messenger-badge--viber {
-  background: #7360f2;
-}
-
-.footer-messenger-badge--telegram {
-  background: #2aabee;
+.footer-messenger-icon img {
+  width: 28px;
+  height: 28px;
 }
 
 @media (max-width: 1200px) {
