@@ -275,89 +275,39 @@ export function Calculating() {
                     <p className="calculating-wrapper-content-text">
                       Який стиль вам ближчий?
                     </p>
-                    <div className="calculating-wrapper-column">
-                      <button
-                        type="button"
-                        className={`calculating-wrapper-column-button ${
-                          quizData.style === "Warm Scandinavian"
-                            ? "selected"
-                            : ""
-                        }`}
-                        onClick={() =>
-                          selectAndNext("style", "Warm Scandinavian")
-                        }
-                      >
-                        <p>01 Warm Scandinavian</p>
-                        {quizData.style === "Warm Scandinavian" && (
-                          <div className="calculating-wrapper-column-button-choosed">
-                            <FaCheck />
-                          </div>
-                        )}
-                      </button>
-                      <button
-                        type="button"
-                        className={`calculating-wrapper-column-button ${
-                          quizData.style === "Світлий мінімалізм"
-                            ? "selected"
-                            : ""
-                        }`}
-                        onClick={() =>
-                          selectAndNext("style", "Світлий мінімалізм")
-                        }
-                      >
-                        <p>02 Світлий мінімалізм</p>
-                        {quizData.style === "Світлий мінімалізм" && (
-                          <div className="calculating-wrapper-column-button-choosed">
-                            <FaCheck />
-                          </div>
-                        )}
-                      </button>
-                      <button
-                        type="button"
-                        className={`calculating-wrapper-column-button ${
-                          quizData.style === "Темна преміум" ? "selected" : ""
-                        }`}
-                        onClick={() =>
-                          selectAndNext("style", "Темна преміум")
-                        }
-                      >
-                        <p>03 Темна преміум</p>
-                        {quizData.style === "Темна преміум" && (
-                          <div className="calculating-wrapper-column-button-choosed">
-                            <FaCheck />
-                          </div>
-                        )}
-                      </button>
-                      <button
-                        type="button"
-                        className={`calculating-wrapper-column-button ${
-                          quizData.style === "Класика" ? "selected" : ""
-                        }`}
-                        onClick={() => selectAndNext("style", "Класика")}
-                      >
-                        <p>04 Класика</p>
-                        {quizData.style === "Класика" && (
-                          <div className="calculating-wrapper-column-button-choosed">
-                            <FaCheck />
-                          </div>
-                        )}
-                      </button>
-                      <button
-                        type="button"
-                        className={`calculating-wrapper-column-button ${
-                          quizData.style === "Сучасний luxury" ? "selected" : ""
-                        }`}
-                        onClick={() =>
-                          selectAndNext("style", "Сучасний luxury")
-                        }
-                      >
-                        <p>05 Сучасний luxury</p>
-                        {quizData.style === "Сучасний luxury" && (
-                          <div className="calculating-wrapper-column-button-choosed">
-                            <FaCheck />
-                          </div>
-                        )}
-                      </button>
+                    <div className="calculating-wrapper-grid">
+                      {[
+                        { label: "Warm Scandinavian", img: "/Calculating/style-1.webp" },
+                        { label: "Світлий мінімалізм", img: "/Calculating/style-2.webp" },
+                        { label: "Темна преміум", img: "/Calculating/style-3.webp" },
+                        { label: "Класика", img: "/Calculating/style-4.webp" },
+                        { label: "Сучасний luxury", img: "/Calculating/style-5.webp" },
+                      ].map((item) => (
+                        <button
+                          key={item.label}
+                          type="button"
+                          className={`calculating-wrapper-grid-card ${
+                            quizData.style === item.label ? "selected" : ""
+                          }`}
+                          onClick={() => selectAndNext("style", item.label)}
+                        >
+                          <ImagePreloader
+                            src={item.img}
+                            alt={item.label}
+                            className="calculating-wrapper-grid-card-img"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                          {quizData.style === item.label && (
+                            <div className="calculating-wrapper-grid-card-choosed">
+                              <FaCheck />
+                            </div>
+                          )}
+                          <p className="calculating-wrapper-grid-card-text">
+                            {item.label}
+                          </p>
+                        </button>
+                      ))}
                     </div>
                   </>
                 )}
@@ -366,28 +316,37 @@ export function Calculating() {
                     <p className="calculating-wrapper-content-text">
                       Для якого приміщення?
                     </p>
-                    <div className="calculating-wrapper-column">
+                    <div className="calculating-wrapper-grid">
                       {[
-                        ["01 Окрема кімната", "Окрема кімната"],
-                        ["02 Спальня", "Спальня"],
-                        ["03 Мансарда", "Мансарда"],
-                        ["04 Ніша", "Ніша"],
-                        ["05 Інше", "Інше"],
-                      ].map(([label, value]) => (
+                        { label: "Окрема кімната", img: "/Calculating/room-1.webp" },
+                        { label: "Спальня", img: "/Calculating/room-2.webp" },
+                        { label: "Мансарда", img: "/Calculating/room-3.webp" },
+                        { label: "Ніша", img: "/Calculating/room-4.webp" },
+                        { label: "Інше", img: "/Calculating/room-5.webp" },
+                      ].map((item) => (
                         <button
-                          key={value}
+                          key={item.label}
                           type="button"
-                          className={`calculating-wrapper-column-button ${
-                            quizData.room === value ? "selected" : ""
+                          className={`calculating-wrapper-grid-card ${
+                            quizData.room === item.label ? "selected" : ""
                           }`}
-                          onClick={() => selectAndNext("room", String(value))}
+                          onClick={() => selectAndNext("room", item.label)}
                         >
-                          <p>{label}</p>
-                          {quizData.room === value && (
-                            <div className="calculating-wrapper-column-button-choosed">
+                          <ImagePreloader
+                            src={item.img}
+                            alt={item.label}
+                            className="calculating-wrapper-grid-card-img"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                          {quizData.room === item.label && (
+                            <div className="calculating-wrapper-grid-card-choosed">
                               <FaCheck />
                             </div>
                           )}
+                          <p className="calculating-wrapper-grid-card-text">
+                            {item.label}
+                          </p>
                         </button>
                       ))}
                     </div>
