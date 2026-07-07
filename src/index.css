@@ -143,3 +143,13 @@ body {
     font-size: 12px;
   }
 }
+
+/* Prevent iOS Safari from auto-detecting and styling text as links */
+a[x-apple-data-detectors] {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
