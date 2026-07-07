@@ -282,6 +282,7 @@ export function Calculating() {
                         { label: "Скандинавський", img: "/Calculating/style-3.webp" },
                         { label: "Лофт", img: "/Calculating/style-4.webp" },
                         { label: "Класичний", img: "/Calculating/style-5.webp" },
+                        { label: "Інше", img: "/Calculating/style-6.webp" },
                       ].map((item) => (
                         <button
                           key={item.label}
