@@ -79,6 +79,45 @@
   opacity: 0.8;
 }
 
+/* Messenger badges */
+.footer-messenger-badges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-messenger-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: Manrope;
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-messenger-badge:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.footer-messenger-badge img {
+  width: 22px;
+  height: 22px;
+}
+
+.footer-messenger-badge--viber {
+  background: #7360f2;
+}
+
+.footer-messenger-badge--telegram {
+  background: #2aabee;
+}
+
 @media (max-width: 1200px) {
   .footer-bottom-content {
     justify-content: flex-start;
