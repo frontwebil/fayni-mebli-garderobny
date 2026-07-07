@@ -4,7 +4,6 @@ import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa";
 import { ImagePreloader } from "../ImagePreloader/ImagePreloader";
 
-
 const TOTAL_STEPS = 6 as const;
 const STEP_KEYS = [
   "type",
@@ -278,15 +277,23 @@ export function Calculating() {
                     <div className="calculating-wrapper-grid">
                       {[
                         { label: "Сучасний", img: "/Calculating/style-1.webp" },
-                        { label: "Мінімалізм", img: "/Calculating/style-2.webp" },
-                        { label: "Скандинавський", img: "/Calculating/style-3.webp" },
+                        {
+                          label: "Мінімалізм",
+                          img: "/Calculating/style-2.webp",
+                        },
+                        {
+                          label: "Скандинавський",
+                          img: "/Calculating/style-3.webp",
+                        },
                         { label: "Лофт", img: "/Calculating/style-4.webp" },
-                        { label: "Класичний", img: "/Calculating/style-5.webp" },
+                        {
+                          label: "Класичний",
+                          img: "/Calculating/style-5.webp",
+                        },
                         { label: "Інше", img: "/Calculating/style-6.webp" },
                       ].map((item) => (
-                        <button
+                        <div
                           key={item.label}
-                          type="button"
                           className={`calculating-wrapper-grid-card ${
                             quizData.style === item.label ? "selected" : ""
                           }`}
@@ -307,7 +314,7 @@ export function Calculating() {
                           <p className="calculating-wrapper-grid-card-text">
                             {item.label}
                           </p>
-                        </button>
+                        </div>
                       ))}
                     </div>
                   </>
@@ -319,15 +326,17 @@ export function Calculating() {
                     </p>
                     <div className="calculating-wrapper-grid">
                       {[
-                        { label: "Окрема кімната", img: "/Calculating/room-1.webp" },
+                        {
+                          label: "Окрема кімната",
+                          img: "/Calculating/room-1.webp",
+                        },
                         { label: "Спальня", img: "/Calculating/room-2.webp" },
                         { label: "Мансарда", img: "/Calculating/room-3.webp" },
                         { label: "Ніша", img: "/Calculating/room-4.webp" },
                         { label: "Інше", img: "/Calculating/room-5.webp" },
                       ].map((item) => (
-                        <button
+                        <div
                           key={item.label}
-                          type="button"
                           className={`calculating-wrapper-grid-card ${
                             quizData.room === item.label ? "selected" : ""
                           }`}
@@ -348,7 +357,7 @@ export function Calculating() {
                           <p className="calculating-wrapper-grid-card-text">
                             {item.label}
                           </p>
-                        </button>
+                        </div>
                       ))}
                     </div>
                   </>
@@ -398,9 +407,8 @@ export function Calculating() {
                         ["100+ тис.", "100+ тис."],
                         ["Потрібна консультація", "Потрібна консультація"],
                       ].map(([label, value]) => (
-                        <button
+                        <div
                           key={value}
-                          type="button"
                           className={`calculating-wrapper-column-button ${
                             quizData.budget === value ? "selected" : ""
                           }`}
@@ -414,7 +422,7 @@ export function Calculating() {
                               <FaCheck />
                             </div>
                           )}
-                        </button>
+                        </div>
                       ))}
                     </div>
                   </>
