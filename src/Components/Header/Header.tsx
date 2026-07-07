@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { LuSofa } from "react-icons/lu";
+import { siteConfig } from "../../data/siteConfig";
 
 export function Header() {
   const [isOpenBurger, setIsOpenBurger] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
+
+  const { phones, messengers, socials, addresses } = siteConfig;
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -22,25 +25,25 @@ export function Header() {
           </Link>
           <div className="header-right">
             <div className="header-social-icons">
-              <a href="https://t.me/FainiKuhni">
+              <a href={messengers.telegram.href}>
                 <img
-                  src="/Footer/tg.svg"
+                  src={messengers.telegram.footerIcon}
                   alt=""
                   className="header-social-icon"
                 />
               </a>
-              <a href="https://msng.link/o?+380678295889=vi">
+              <a href={messengers.viber.href}>
                 <img
-                  src="/Footer/viber.svg"
+                  src={messengers.viber.footerIcon}
                   alt=""
                   className="header-social-icon"
                 />
               </a>
               <a
-                href="tel:0800337592"
+                href={phones[1].href}
                 className="telephone text-md font-medium"
               >
-                0 800-33-75-92
+                {phones[1].number}
               </a>
             </div>
             <div
@@ -58,7 +61,7 @@ export function Header() {
                     <svg
                       stroke="currentColor"
                       fill="currentColor"
-                      stroke-width="0"
+                      strokeWidth="0"
                       viewBox="0 0 32 32"
                       height="1em"
                       width="1em"
@@ -90,108 +93,49 @@ export function Header() {
         </div>
       </div>
       <div className={`burger-menu ${isOpenBurger && "active"}`}>
-        {/* <Link
-          to="/#catalog"
-          className="text-base font-medium nav-links"
-          onClick={() => setIsOpenBurger(false)}
-        >
-          Наші найкращі моделі
-        </Link>
-        <Link
-          to="/#seeMore"
-          className="text-base font-medium nav-links"
-          onClick={() => setIsOpenBurger(false)}
-        >
-          Про компанію
-        </Link>
-        <Link
-          to="/#howBorn"
-          className="text-base font-medium nav-links"
-          onClick={() => setIsOpenBurger(false)}
-        >
-          Як народжується кухня
-        </Link>
-        <Link
-          to="/#testimonials"
-          className="text-base font-medium nav-links"
-          onClick={() => setIsOpenBurger(false)}
-        >
-          Відгуки про нашу роботу
-        </Link>
-        <Link
-          to="/#quiz"
-          className="text-base font-medium nav-links"
-          onClick={() => setIsOpenBurger(false)}
-        >
-          Розрахуйте ціну своєї кухні
-        </Link>
-        <Link
-          to="/#about-us"
-          className="text-base font-medium nav-links"
-          onClick={() => setIsOpenBurger(false)}
-        >
-          Про нас - честно і без прикрас
-        </Link>
-        <Link
-          to="/#partners"
-          className="text-base font-medium nav-links"
-          onClick={() => setIsOpenBurger(false)}
-        >
-          наші замовники
-        </Link>
-        <Link
-          to="/#questions"
-          className="text-base font-medium nav-links"
-          onClick={() => setIsOpenBurger(false)}
-        >
-          найчастіші питання
-        </Link> */}
         <div className="mobile-header-column">
-          <a href="tel:380974597557" className="font-semiBold">
-            +38 (097) 459-75-57
+          <a href={phones[0].href} className="font-semiBold">
+            {phones[0].number}
           </a>
-          <a href="tel:0800337592" className="font-semiBold">
-            0 800-33-75-92
+          <a href={phones[1].href} className="font-semiBold">
+            {phones[1].number}
           </a>
           <p className="text-base font-semiBold">Тисніть на іконки:</p>
           <div className="pop-up-icons">
-            <a href="https://msng.link/o?+380678295889=vi">
-              <img src="/icons/vb.svg" alt="" className="icon-social" />
+            <a href={messengers.viber.href}>
+              <img src={messengers.viber.icon} alt="" className="icon-social" />
             </a>
-            <a href="https://t.me/FainiKuhni">
-              <img src="/icons/tg.svg" alt="" className="icon-social" />
+            <a href={messengers.telegram.href}>
+              <img src={messengers.telegram.icon} alt="" className="icon-social" />
             </a>
           </div>
-          <a
-            href="https://share.google/sXr6XXfJFFilGf57y"
-            className="text-base font-semiBold"
-          >
-            м. Київ, вул. Святошинська, 1
-          </a>
-          <a
-            href="https://maps.app.goo.gl/YWsi5WFsghdrXNsi9"
-            className="text-base font-semiBold"
-          >
-            м. Одеса, вул. Ярослава Мудрого, 29
-          </a>
+          {addresses.map((addr) => (
+            <a
+              key={addr.city}
+              href={addr.mobileMapUrl}
+              className="text-base font-semiBold"
+            >
+              {addr.text}
+            </a>
+          ))}
           <div className="footer-links-social">
-            <a href="https://www.facebook.com/faynimebli/">
+            <a href={socials.facebook.href}>
               <img
-                src="/Footer/fb.svg"
+                src={socials.facebook.footerIcon}
                 alt=""
                 className="footer-links-social-icon"
               />
             </a>
-            <a href="https://www.instagram.com/fayni.mebli?igsh=cnRlcGhvbDloYmoy">
+            <a href={socials.instagram.href}>
               <img
-                src="/Footer/inst.svg"
+                src={socials.instagram.footerIcon}
                 alt=""
                 className="footer-links-social-icon"
               />
             </a>
-            <a href="https://www.youtube.com/user/faynimebli">
+            <a href={socials.youtube.href}>
               <img
-                src="/Footer/yt.svg"
+                src={socials.youtube.footerIcon}
                 alt=""
                 className="footer-links-social-icon"
               />

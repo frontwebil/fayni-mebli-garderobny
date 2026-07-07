@@ -3,9 +3,12 @@ import {
   FaInstagram,
   FaYoutube,
 } from "react-icons/fa";
+import { siteConfig } from "../../data/siteConfig";
 import "./style.css";
 
 export function Footer() {
+  const { phones, messengers, socials, addresses, website } = siteConfig;
+
   return (
     <footer className="footer">
       <div className="container">
@@ -14,53 +17,73 @@ export function Footer() {
         </div>
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://maps.app.goo.gl/axJffCrgH6MYBTKz7"
-              className="footer-bottom-text"
-            >
-              м. Київ, вул. Святошинська, 1
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://maps.app.goo.gl/ea9viwE81NzZeGyH6"
-              className="footer-bottom-text"
-            >
-              м. Одеса, вул. Ярослава Мудрого, 29
-            </a>
+            {addresses.map((addr) => (
+              <a
+                key={addr.city}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={addr.mapUrl}
+                className="footer-bottom-text"
+              >
+                {addr.text}
+              </a>
+            ))}
+
             <a
               className="footer-bottom-text footer-bottom-link"
-              href="tel:+380974597557"
+              href={phones[0].href}
             >
-              +38 (097) 459-75-57
+              {phones[0].number}
             </a>
+
             <div className="footer-bottom-phones">
               <a
                 className="footer-bottom-text footer-bottom-link"
-                href="tel:0800337592"
+                href={phones[1].href}
               >
-                0800 33 75 92
+                {phones[1].number}
               </a>
-              <span className="footer-bottom-caption">
-                Безкоштовно з усіх телефонів
-              </span>
+              {phones[1].caption && (
+                <span className="footer-bottom-caption">{phones[1].caption}</span>
+              )}
             </div>
+
             <div className="footer-bottom-site">
               <a
                 className="footer-bottom-text footer-bottom-link"
-                href="https://fayni-mebli.com"
+                href={website.url}
                 target="_blank"
                 rel="noreferrer"
               >
-                www.fayni-mebli.com
+                {website.label}
               </a>
               <span className="footer-bottom-caption">Наш вебсайт</span>
             </div>
+
+            <div className="footer-messenger-badges">
+              <a
+                href={messengers.viber.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-messenger-badge footer-messenger-badge--viber"
+              >
+                <img src={messengers.viber.footerIcon} alt={messengers.viber.label} />
+                <span>{messengers.viber.label}</span>
+              </a>
+              <a
+                href={messengers.telegram.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-messenger-badge footer-messenger-badge--telegram"
+              >
+                <img src={messengers.telegram.footerIcon} alt={messengers.telegram.label} />
+                <span>{messengers.telegram.label}</span>
+              </a>
+            </div>
+
             <div className="footer-bottom-socials">
               <a
-                href="http://facebook.com/faynimebli/"
+                href={socials.facebook.href}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
@@ -68,7 +91,7 @@ export function Footer() {
                 <FaFacebookF />
               </a>
               <a
-                href="https://www.instagram.com/fayni.mebli?igsh=cnRlcGhvbDloYmoy"
+                href={socials.instagram.href}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
@@ -76,7 +99,7 @@ export function Footer() {
                 <FaInstagram />
               </a>
               <a
-                href="https://www.youtube.com/user/faynimebli"
+                href={socials.youtube.href}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="YouTube"
