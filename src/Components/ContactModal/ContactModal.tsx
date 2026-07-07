@@ -8,7 +8,7 @@ interface ContactModalProps {
   title: string;
 }
 
-export function ContactModal({ isOpen, onClose, title }: ContactModalProps) {
+export function ContactModal({ isOpen, onClose, title: _title }: ContactModalProps) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("+380 ");
   const [isLoading, setIsLoading] = useState(false);

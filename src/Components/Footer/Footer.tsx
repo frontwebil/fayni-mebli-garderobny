@@ -60,24 +60,22 @@ export function Footer() {
               <span className="footer-bottom-caption">Наш вебсайт</span>
             </div>
 
-            <div className="footer-messenger-badges">
+            <div className="footer-messenger-icons">
               <a
                 href={messengers.viber.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="footer-messenger-badge footer-messenger-badge--viber"
+                className="footer-messenger-icon"
               >
-                <img src={messengers.viber.footerIcon} alt={messengers.viber.label} />
-                <span>{messengers.viber.label}</span>
+                <img src={messengers.viber.icon} alt={messengers.viber.label} />
               </a>
               <a
                 href={messengers.telegram.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="footer-messenger-badge footer-messenger-badge--telegram"
+                className="footer-messenger-icon"
               >
-                <img src={messengers.telegram.footerIcon} alt={messengers.telegram.label} />
-                <span>{messengers.telegram.label}</span>
+                <img src={messengers.telegram.icon} alt={messengers.telegram.label} />
               </a>
             </div>
 
