@@ -1,8 +1,4 @@
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import { siteConfig } from "../../data/siteConfig";
 import "./style.css";
 
@@ -13,7 +9,13 @@ export function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="footer-logo">
-          <img src="/logo.png" alt="Файні Меблі" loading="lazy" width="120" height="40" />
+          <img
+            src="/logo.png"
+            alt="Файні Меблі"
+            loading="lazy"
+            width="120"
+            height="40"
+          />
         </div>
         <div className="footer-bottom">
           <div className="footer-bottom-content">
@@ -28,37 +30,6 @@ export function Footer() {
                 {addr.text}
               </a>
             ))}
-
-            <a
-              className="footer-bottom-text footer-bottom-link"
-              href={phones[0].href}
-            >
-              {phones[0].number}
-            </a>
-
-            <div className="footer-bottom-phones">
-              <a
-                className="footer-bottom-text footer-bottom-link"
-                href={phones[1].href}
-              >
-                {phones[1].number}
-              </a>
-              {phones[1].caption && (
-                <span className="footer-bottom-caption">{phones[1].caption}</span>
-              )}
-            </div>
-
-            <div className="footer-bottom-site">
-              <a
-                className="footer-bottom-text footer-bottom-link"
-                href={website.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {website.label}
-              </a>
-              <span className="footer-bottom-caption">Наш вебсайт</span>
-            </div>
 
             <div className="footer-messenger-icons">
               <a
@@ -75,8 +46,44 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="footer-messenger-icon"
               >
-                <img src={messengers.telegram.icon} alt={messengers.telegram.label} />
+                <img
+                  src={messengers.telegram.icon}
+                  alt={messengers.telegram.label}
+                />
               </a>
+            </div>
+
+            <a
+              className="footer-bottom-text footer-bottom-link"
+              href={phones[0].href}
+            >
+              {phones[0].number}
+            </a>
+
+            <div className="footer-bottom-phones">
+              <a
+                className="footer-bottom-text footer-bottom-link"
+                href={phones[1].href}
+              >
+                {phones[1].number}
+              </a>
+              {phones[1].caption && (
+                <span className="footer-bottom-caption">
+                  {phones[1].caption}
+                </span>
+              )}
+            </div>
+
+            <div className="footer-bottom-site">
+              <a
+                className="footer-bottom-text footer-bottom-link"
+                href={website.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {website.label}
+              </a>
+              <span className="footer-bottom-caption">Наш вебсайт</span>
             </div>
 
             <div className="footer-bottom-socials">

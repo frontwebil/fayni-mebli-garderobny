@@ -7,7 +7,7 @@ const INITIAL_COUNT = 6;
 export function Gallery() {
   const images = useMemo(
     () =>
-      [...Array(14)].map((_, index) => ({
+      [...Array(24)].map((_, index) => ({
         src: `/Gallery/${index + 1}.webp`,
         alt: `Фото галереї ${index + 1}`,
       })),
