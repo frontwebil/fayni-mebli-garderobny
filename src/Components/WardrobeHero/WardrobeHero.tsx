@@ -30,10 +30,19 @@ export function WardrobeHero({
   const handleBackClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault();
+
       navigate("/");
+
       setTimeout(() => {
         const el = document.getElementById("catalog");
-        if (el) el.scrollIntoView({ behavior: "smooth" });
+
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY + 0; // 100px нижче
+          window.scrollTo({
+            top: y,
+            behavior: "smooth",
+          });
+        }
       }, 100);
     },
     [navigate],
@@ -42,7 +51,11 @@ export function WardrobeHero({
   return (
     <section className="WardrobeHero">
       <div className="container">
-        <a href="/#catalog" className="WardrobeHero-back" onClick={handleBackClick}>
+        <a
+          href="/#catalog"
+          className="WardrobeHero-back"
+          onClick={handleBackClick}
+        >
           <BiArrowBack />
           <p>На головну</p>
         </a>
