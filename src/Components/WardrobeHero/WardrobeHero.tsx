@@ -28,7 +28,7 @@ export function WardrobeHero({
   return (
     <section className="WardrobeHero">
       <div className="container">
-        <a href="/" className="WardrobeHero-back">
+        <a href="/#catalog" className="WardrobeHero-back">
           <BiArrowBack />
           <p>На головну</p>
         </a>
