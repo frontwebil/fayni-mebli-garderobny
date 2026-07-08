@@ -8,11 +8,12 @@ import { WardrobeDescription } from "../Components/WardrobeDescription/WardrobeD
 import { Gallery } from "../Components/Gallery/Gallery";
 import { Testimonials } from "../Components/Testimonials/Testimonials";
 import { ColorsVariants } from "../Components/ColorsVariants/ColorsVariants";
-import { getWardrobeById } from "../data/wardrobes";
+import { getWardrobeBySlug } from "../data/wardrobes";
+import { RelatedProducts } from "../Components/RelatedProducts/RelatedProducts";
 
 export function ProductPage() {
-  const { id } = useParams<{ id: string }>();
-  const wardrobe = getWardrobeById(Number(id));
+  const { slug } = useParams<{ slug: string }>();
+  const wardrobe = getWardrobeBySlug(slug ?? "");
 
   const [contactModal, setContactModal] = useState<{
     open: boolean;
@@ -39,6 +40,7 @@ export function ProductPage() {
       <ColorsVariants />
       <Gallery />
       <Testimonials />
+      <RelatedProducts currentWardrobe={wardrobe} />
       <Footer />
       <ContactModal
         isOpen={contactModal.open}

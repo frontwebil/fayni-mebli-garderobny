@@ -4,6 +4,7 @@ export type MediaItem =
 
 export interface Wardrobe {
   id: number;
+  slug: string;
   title: string;
   size: string;
   price: string;
@@ -16,6 +17,7 @@ export interface Wardrobe {
 export const wardrobes: Wardrobe[] = [
   {
     id: 1,
+    slug: "vbudovana-pryama-garderobna-z-pidsvitkoju",
     title: "Вбудована пряма гардеробна з підсвіткою",
     size: "3200×500×2400 мм",
     price: "33 000",
@@ -40,6 +42,7 @@ export const wardrobes: Wardrobe[] = [
   },
   {
     id: 2,
+    slug: "kutova-fabrychna-garderobna-z-pidsvitkoju",
     title: "Кутова фабрична гардеробна з підсвіткою",
     size: "1200×2400 мм, глибина 500 мм, висота 2600 мм",
     price: "65 900",
@@ -66,6 +69,7 @@ export const wardrobes: Wardrobe[] = [
   },
   {
     id: 3,
+    slug: "vbudovana-garderobna-v-peredpokij-z-pidsvitkoju",
     title: "Вбудована гардеробна в передпокій з підсвіткою",
     size: "3200×500×2400 мм",
     price: "38 900",
@@ -90,6 +94,7 @@ export const wardrobes: Wardrobe[] = [
   },
   {
     id: 4,
+    slug: "minimalistychna-kutova-garderobna-v-svitlomu-kolori",
     title: "Мінімалістична кутова гардеробна в світлому кольорі",
     size: "2700×2900 мм, глибина 500 мм, висота 2400 мм",
     price: "49 320",
@@ -114,6 +119,7 @@ export const wardrobes: Wardrobe[] = [
   },
   {
     id: 5,
+    slug: "klasychna-bila-garderobna-z-zolotoju-furnituroyu-ta-dzerkalamy",
     title: "Класична біла гардеробна з золотою фурнітурою та дзеркалами",
     size: "2000×900×2000 мм, глибина 500 мм, висота 2600 мм",
     price: "190 000",
@@ -136,6 +142,7 @@ export const wardrobes: Wardrobe[] = [
   },
   {
     id: 6,
+    slug: "premium-garderobna-z-italijskogo-dsp",
     title: "Преміум гардеробна з італійського ДСП",
     size: "1800/2500/3300/1672 мм, глибина 500 мм, висота 2720 мм",
     price: "290 000",
@@ -168,6 +175,7 @@ export const wardrobes: Wardrobe[] = [
   },
   {
     id: 7,
+    slug: "premium-garderobna-vbudovana-pid-skhody-z-italijskogo-dsp",
     title: "Преміум гардеробна вбудована під сходи з італійського ДСП",
     size: "1080/1735/1745 мм, глибина 420/550/620 мм, висота 2000 мм",
     price: "149 900",
@@ -192,6 +200,7 @@ export const wardrobes: Wardrobe[] = [
   },
   {
     id: 8,
+    slug: "garderobna-v-spalni-z-rozsuvnoyu-systemoyu",
     title: "Гардеробна в спальні з розсувною системою",
     size: "1800×2700 мм, глибина 600 мм",
     price: "26 900",
@@ -212,6 +221,7 @@ export const wardrobes: Wardrobe[] = [
   },
   {
     id: 9,
+    slug: "bila-kutova-garderobna-z-shukhladamy",
     title: "Біла кутова гардеробна з шухлядами",
     size: "2100×1500 мм",
     price: "35 600",
@@ -230,6 +240,7 @@ export const wardrobes: Wardrobe[] = [
   },
   {
     id: 10,
+    slug: "suchasna-garderobna-v-siromu-kolori",
     title: "Сучасна гардеробна в сірому кольорі",
     size: "1900×2000×1900 мм, глибина 500 мм, висота 2400 мм",
     price: "85 600",
@@ -250,4 +261,8 @@ export const wardrobes: Wardrobe[] = [
 
 export function getWardrobeById(id: number): Wardrobe | undefined {
   return wardrobes.find((w) => w.id === id);
+}
+
+export function getWardrobeBySlug(slug: string): Wardrobe | undefined {
+  return wardrobes.find((w) => w.slug === slug);
 }

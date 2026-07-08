@@ -1,0 +1,112 @@
+.related-products {
+  padding: 60px 0;
+  background-color: #f5f0eb;
+}
+
+.related-products-label {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: rgba(181, 123, 66, 1);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.related-products-title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 130%;
+  color: rgba(63, 49, 33, 1);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.related-products-swiper {
+  padding-bottom: 40px !important;
+}
+
+.related-products-swiper .swiper-pagination {
+  bottom: 0;
+}
+
+.related-products-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(181, 123, 66, 0.3);
+  opacity: 1;
+}
+
+.related-products-swiper .swiper-pagination-bullet-active {
+  background: rgba(181, 123, 66, 1);
+}
+
+.related-products-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.related-products-card-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.related-products-card-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: rgba(63, 49, 33, 1);
+  margin-bottom: 8px;
+  min-height: 44px;
+}
+
+.related-products-card-price {
+  font-weight: 600;
+  font-size: 18px;
+  color: rgba(63, 49, 33, 1);
+  margin-bottom: 16px;
+}
+
+.related-products-card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border: 1.5px solid rgba(181, 123, 66, 1);
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 14px;
+  color: rgba(63, 49, 33, 1);
+  background: transparent;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.related-products-card:hover .related-products-card-btn {
+  background: rgba(181, 123, 66, 1);
+  color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+  .related-products {
+    padding: 40px 0;
+  }
+
+  .related-products-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .related-products-card-title {
+    font-size: 14px;
+    min-height: 40px;
+  }
+
+  .related-products-card-price {
+    font-size: 16px;
+  }
+}
