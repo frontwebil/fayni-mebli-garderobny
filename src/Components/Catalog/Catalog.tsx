@@ -16,7 +16,7 @@ export function Catalog() {
         <div className="catalog-cards">
           {wardrobes.map((wardrobe) => (
             <a
-              href={`/productPage/${wardrobe.id}`}
+              href={`/productPage/${wardrobe.slug}`}
               className="catalog-card"
               key={wardrobe.id}
             >

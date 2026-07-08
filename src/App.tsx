@@ -11,7 +11,7 @@ export function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route
-        path="/productPage/:id"
+        path="/productPage/:slug"
         element={
           <Suspense fallback={null}>
             <ProductPage />
