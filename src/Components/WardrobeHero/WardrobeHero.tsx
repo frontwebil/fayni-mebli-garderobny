@@ -5,7 +5,8 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 
 import "./style.css";
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 import type { Wardrobe, MediaItem } from "../../data/wardrobes";
 
@@ -16,6 +17,7 @@ export function WardrobeHero({
   wardrobe: Wardrobe;
   openContactModal: () => void;
 }) {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -25,10 +27,22 @@ export function WardrobeHero({
     setCurrentIndex(index);
   };
 
+  const handleBackClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById("catalog");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    },
+    [navigate],
+  );
+
   return (
     <section className="WardrobeHero">
       <div className="container">
-        <a href="/#catalog" className="WardrobeHero-back">
+        <a href="/#catalog" className="WardrobeHero-back" onClick={handleBackClick}>
           <BiArrowBack />
           <p>На головну</p>
         </a>
