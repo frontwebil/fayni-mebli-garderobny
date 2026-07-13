@@ -4,10 +4,12 @@ import "./index.css";
 import "./reset.css";
 import { BrowserRouter } from "react-router-dom";
 import { App } from "./App";
+import { ScrollToHash } from "./Components/ScrollToHash";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
+      <ScrollToHash />
       <App />
     </BrowserRouter>
   </StrictMode>,
