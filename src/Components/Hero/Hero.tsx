@@ -38,7 +38,7 @@ export function Hero({ onOpenContactForm }: HeroProps) {
               className="hero-advantage-img"
             />
             <p className="hero-advantage-text">
-              Індивідуальний проект під ваш простір
+              Індивідуальний проєкт під ваш простір
             </p>
           </div>
           <div className="hero-advantages-line"></div>

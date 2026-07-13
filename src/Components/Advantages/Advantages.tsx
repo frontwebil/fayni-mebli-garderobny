@@ -92,7 +92,7 @@ export function Advantages({ onOpenContactForm }: AdvantagesProps) {
         </button>
         <div className="advantages-underbutton-text">
           <GoShieldCheck />
-          <p>Без зобов'язань. Консультація та прорахунок безкоштовно.</p>
+          <p>Консультація та прорахунок безкоштовно.</p>
         </div>
       </div>
     </section>

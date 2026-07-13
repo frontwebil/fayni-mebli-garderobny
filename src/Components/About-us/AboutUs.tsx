@@ -9,7 +9,7 @@ export function AboutUs() {
         </div>
         <div className="about-us-text">
           <h2 className="about-us-text-title" id="about-title">
-            Про нас - честно і без прикрас
+            Про нас - чесно і без прикрас
           </h2>
           <div className="line"></div>
           <div className="about-us-text-content">

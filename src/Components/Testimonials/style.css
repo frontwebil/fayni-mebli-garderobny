@@ -56,7 +56,11 @@
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-  height: max-content;
+  height: 100%;
+}
+
+.testimonials-card img{
+  height: 100%;
 }
 
 .testimonials-card:hover {
