@@ -26,7 +26,7 @@ export function Hero({ onOpenContactForm }: HeroProps) {
           </h1>
           <div className="line"></div>
           <p className="hero-text-wrapper-text">
-            Проектуємо та виготовляємо гардеробні під ваш простір та бюджет
+            Проєктуємо та виготовляємо гардеробні під ваш простір та бюджет
           </p>
         </div>
         <div className="hero-advantages-row">
@@ -62,7 +62,7 @@ export function Hero({ onOpenContactForm }: HeroProps) {
               className="hero-advantage-img"
             />
             <p className="hero-advantage-text">
-              Заміри, проект, доставка, монтаж
+              Заміри, проєкт, доставка, монтаж
             </p>
           </div>
         </div>

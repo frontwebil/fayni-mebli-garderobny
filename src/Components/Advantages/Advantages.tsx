@@ -42,7 +42,7 @@ const advantages = [
   {
     icon: "/Advantages/7.svg",
     title: "Безкоштовний виїзд",
-    description: "заміpника за адресою",
+    description: "замірника за адресою",
   },
   {
     icon: "/Advantages/8.svg",
