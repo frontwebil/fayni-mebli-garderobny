@@ -1,7 +1,12 @@
-RewriteEngine On
-RewriteBase /
-
-RewriteRule ^index\.html$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L]
+# SPA fallback для React Router (BrowserRouter)
+# Всі неіснуючі шляхи віддають index.html, роутинг далі робить React
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  # реальні файли та папки віддаємо як є (assets, картинки, sitemap тощо)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  # все інше -> index.html
+  RewriteRule ^ /index.html [L]
+</IfModule>

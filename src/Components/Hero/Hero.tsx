@@ -80,7 +80,7 @@ export function Hero({ onOpenContactForm }: HeroProps) {
             <ImagePreloader
               src="/Hero/examples/1.webp"
               alt="Сучасна гардеробна на замовлення"
-              
+              loading="lazy"
               decoding="async"
             />
             <p>
@@ -93,7 +93,7 @@ export function Hero({ onOpenContactForm }: HeroProps) {
             <ImagePreloader
               src="/Hero/examples/2.webp"
               alt="Класична гардеробна на замовлення"
-              
+              loading="lazy"
               decoding="async"
             />
             <p>
@@ -106,7 +106,7 @@ export function Hero({ onOpenContactForm }: HeroProps) {
             <ImagePreloader
               src="/Hero/examples/3.webp"
               alt="Преміум гардеробна на замовлення"
-              
+              loading="lazy"
               decoding="async"
             />
             <p>
@@ -119,7 +119,7 @@ export function Hero({ onOpenContactForm }: HeroProps) {
             <ImagePreloader
               src="/Hero/examples/4.webp"
               alt="Гардеробна на мансарду"
-              
+              loading="lazy"
               decoding="async"
             />
             <p>
