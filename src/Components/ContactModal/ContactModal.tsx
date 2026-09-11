@@ -125,7 +125,7 @@ export function ContactModal({ isOpen, onClose, title: _title }: ContactModalPro
             <p className="contact-modal-icons-label">Тисніть на іконки:</p>
             <div className="contact-modal-socials">
               <a
-                href="https://msng.link/o?+380678295889=vi"
+                href="https://msng.link/o?+380672521999=vi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-modal-social-link"
@@ -133,7 +133,7 @@ export function ContactModal({ isOpen, onClose, title: _title }: ContactModalPro
                 <img src="/icons/vb.svg" alt="Viber" className="contact-modal-social-icon" />
               </a>
               <a
-                href="https://t.me/FainiKuhni"
+                href="https://t.me/faynimebli"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-modal-social-link"

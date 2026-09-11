@@ -7,13 +7,13 @@ export const siteConfig = {
   messengers: {
     viber: {
       label: "Viber",
-      href: "https://msng.link/o?+380678295889=vi",
+      href: "https://msng.link/o?+380672521999=vi",
       icon: "/icons/vb.svg",
       footerIcon: "/Footer/viber.svg",
     },
     telegram: {
       label: "Telegram",
-      href: "https://t.me/FainiKuhni",
+      href: "https://t.me/faynimebli",
       icon: "/icons/tg.svg",
       footerIcon: "/Footer/tg.svg",
     },
