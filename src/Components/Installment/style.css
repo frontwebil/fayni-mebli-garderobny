@@ -1,15 +1,19 @@
 .installment {
-  padding: 100px 0;
+  padding: 0 0 100px;
+}
+
+.installment-top{
+  padding-top: 100px;
 }
 
 .installment-intro {
   max-width: 760px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   gap: 16px;
-  margin: 0 auto 32px;
-  text-align: center;
+  margin: 0 0 32px;
+  text-align: left;
 }
 
 .installment-title,

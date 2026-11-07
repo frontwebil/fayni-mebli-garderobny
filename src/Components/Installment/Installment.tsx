@@ -40,7 +40,7 @@ export function Installment() {
       id="installment"
       aria-labelledby="installment-title"
     >
-      <div className="container">
+      <div className="container installment-top">
         <div className="installment-intro">
           <h2 className="installment-title" id="installment-title">
             Гардеробна у розстрочку чи кредит
@@ -65,7 +65,8 @@ export function Installment() {
             </article>
           ))}
         </div>
-
+      </div>
+      <div className="container">
         <div className="installment-banks">
           <div className="installment-banks-heading">
             <h2 className="installment-banks-title">
