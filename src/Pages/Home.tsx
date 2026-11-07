@@ -4,6 +4,7 @@ import { Catalog } from "../Components/Catalog/Catalog";
 import { Hero } from "../Components/Hero/Hero";
 import { VideoSection } from "../Components/VideoSection/VideoSection";
 import { Gallery } from "../Components/Gallery/Gallery";
+import { Installment } from "../Components/Installment/Installment";
 import { Testimonials } from "../Components/Testimonials/Testimonials";
 import { Calculating } from "../Components/Calculating/Calculating";
 import { Advantages } from "../Components/Advantages/Advantages";
@@ -34,6 +35,7 @@ export function Home() {
         <Catalog />
         <VideoSection />
         <Gallery />
+        <Installment />
         <Testimonials />
         <Calculating />
         <Advantages

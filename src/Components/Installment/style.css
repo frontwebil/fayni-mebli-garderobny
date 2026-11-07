@@ -1,0 +1,214 @@
+.installment {
+  padding: 100px 0;
+}
+
+.installment-intro {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.installment-title,
+.installment-banks-title {
+  font-family: "PT Serif Caption", serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.installment-description {
+  max-width: 680px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.installment-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.installment-benefit {
+  min-height: 220px;
+  padding: 24px 16px;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.installment-benefit-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(241, 229, 222, 1);
+  color: rgba(181, 123, 66, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.installment-benefit-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.7;
+}
+
+.installment-benefit-title {
+  margin: 12px 0 4px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.installment-benefit-description {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.installment-banks {
+  margin-top: 64px;
+}
+
+.installment-banks-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.installment-bank-list {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.installment-bank {
+  min-width: 0;
+  height: 96px;
+  padding: 16px;
+  border: 1px solid rgba(63, 49, 33, 0.06);
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(63, 49, 33, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.installment-bank img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 920px) {
+  .installment {
+    padding: 80px 0;
+  }
+
+  .installment-title,
+  .installment-banks-title {
+    font-size: 32px;
+  }
+
+  .installment-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .installment-bank-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .installment {
+    padding: 48px 0;
+  }
+
+  .installment-intro,
+  .installment-banks-heading {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .installment-intro {
+    margin-bottom: 24px;
+    gap: 12px;
+  }
+
+  .installment-title,
+  .installment-banks-title {
+    font-size: 24px;
+    line-height: 140%;
+  }
+
+  .installment-description {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .installment-benefits {
+    gap: 8px;
+  }
+
+  .installment-benefit {
+    min-height: 172px;
+    padding: 16px 8px;
+    border-radius: 4px;
+  }
+
+  .installment-benefit-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .installment-benefit-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .installment-benefit-title {
+    margin: 8px 0 4px;
+    font-size: 15px;
+  }
+
+  .installment-benefit-description {
+    font-size: 13px;
+  }
+
+  .installment-banks {
+    margin-top: 40px;
+  }
+
+  .installment-banks-heading {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .installment-bank-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .installment-bank {
+    height: 76px;
+    padding: 12px;
+    border-radius: 8px;
+  }
+}
