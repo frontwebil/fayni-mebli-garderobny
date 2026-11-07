@@ -1,9 +1,35 @@
 .installment {
   padding: 0 0 100px;
+  overflow: hidden;
 }
 
-.installment-top{
-  padding-top: 100px;
+.installment-top {
+  position: relative;
+  isolation: isolate;
+  padding: 100px 16px;
+}
+
+.installment-top::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(246, 241, 238, 0.98) 0%,
+      rgba(246, 241, 238, 0.94) 28%,
+      rgba(246, 241, 238, 0.72) 47%,
+      rgba(246, 241, 238, 0.22) 72%,
+      rgba(246, 241, 238, 0.08) 100%
+    ),
+    url("/installment/main-optimized.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .installment-intro {
@@ -38,10 +64,12 @@
 }
 
 .installment-benefit {
-  min-height: 220px;
-  padding: 24px 16px;
+  min-height: 190px;
+  padding: 18px 14px;
   border: 1px solid #fff;
   border-radius: 15px;
+  background: rgba(246, 241, 238, 0.84);
+  backdrop-filter: blur(3px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,8 +78,8 @@
 }
 
 .installment-benefit-icon {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: rgba(241, 229, 222, 1);
   color: rgba(181, 123, 66, 1);
@@ -61,13 +89,13 @@
 }
 
 .installment-benefit-icon svg {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   stroke-width: 1.7;
 }
 
 .installment-benefit-title {
-  margin: 12px 0 4px;
+  margin: 8px 0 4px;
   font-size: 24px;
   font-weight: 600;
   line-height: 140%;
@@ -100,8 +128,8 @@
 
 .installment-bank {
   min-width: 0;
-  height: 96px;
-  padding: 16px;
+  height: 80px;
+  padding: 12px;
   border: 1px solid rgba(63, 49, 33, 0.06);
   border-radius: 15px;
   background: #fff;
@@ -113,8 +141,8 @@
 
 .installment-bank img {
   display: block;
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 88%;
+  max-height: 42px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -122,7 +150,7 @@
 
 @media (max-width: 920px) {
   .installment {
-    padding: 80px 0;
+    padding: 0 0 80px;
   }
 
   .installment-title,
@@ -142,7 +170,24 @@
 
 @media (max-width: 600px) {
   .installment {
-    padding: 48px 0;
+    padding: 0 0 48px;
+  }
+
+  .installment-top {
+    padding-top: 48px;
+  }
+
+  .installment-top::before {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(246, 241, 238, 0.98) 0%,
+        rgba(246, 241, 238, 0.92) 48%,
+        rgba(246, 241, 238, 0.46) 76%,
+        rgba(246, 241, 238, 0.2) 100%
+      ),
+      url("/installment/main-optimized.jpg");
+    background-position: 66% center;
   }
 
   .installment-intro,
@@ -172,23 +217,23 @@
   }
 
   .installment-benefit {
-    min-height: 172px;
-    padding: 16px 8px;
+    min-height: 150px;
+    padding: 12px 8px;
     border-radius: 4px;
   }
 
   .installment-benefit-icon {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
   }
 
   .installment-benefit-icon svg {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
   }
 
   .installment-benefit-title {
-    margin: 8px 0 4px;
+    margin: 6px 0 3px;
     font-size: 15px;
   }
 
@@ -211,8 +256,13 @@
   }
 
   .installment-bank {
-    height: 76px;
-    padding: 12px;
+    height: 64px;
+    padding: 10px;
     border-radius: 8px;
+  }
+
+  .installment-bank img {
+    max-width: 88%;
+    max-height: 34px;
   }
 }
