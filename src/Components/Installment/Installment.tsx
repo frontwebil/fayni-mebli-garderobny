@@ -43,7 +43,7 @@ export function Installment() {
       <div className="container installment-top">
         <div className="installment-intro">
           <h2 className="installment-title" id="installment-title">
-            Гардеробна у розстрочку чи кредит
+            Гардеробна у розстрочку
           </h2>
           <div className="line" />
           <p className="installment-description">
@@ -52,16 +52,28 @@ export function Installment() {
           </p>
         </div>
 
+        <img
+          className="installment-mobile-image"
+          src="/installment/main-optimized.jpg"
+          alt="Сучасна гардеробна з підсвіченими полицями"
+          loading="lazy"
+          decoding="async"
+        />
+
         <div className="installment-benefits">
           {benefits.map(({ icon: Icon, title, description }) => (
             <article className="installment-benefit" key={title}>
               <div className="installment-benefit-icon" aria-hidden="true">
                 <Icon />
               </div>
-              <h3 className="installment-benefit-title">{title}</h3>
-              {description && (
-                <p className="installment-benefit-description">{description}</p>
-              )}
+              <div className="installment-benefit-copy">
+                <h3 className="installment-benefit-title">{title}</h3>
+                {description && (
+                  <p className="installment-benefit-description">
+                    {description}
+                  </p>
+                )}
+              </div>
             </article>
           ))}
         </div>
