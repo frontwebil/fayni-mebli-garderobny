@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { FiCalendar, FiCreditCard, FiMonitor, FiPercent } from "react-icons/fi";
+import { InstallmentRequestModal } from "./InstallmentRequestModal";
 import "./style.css";
 
 const benefits = [
@@ -34,6 +36,8 @@ const banks = [
 ];
 
 export function Installment() {
+  const [isRequestOpen, setIsRequestOpen] = useState(false);
+
   return (
     <section
       className="installment"
@@ -93,8 +97,19 @@ export function Installment() {
               </div>
             ))}
           </div>
+          <button
+            type="button"
+            className="installment-request-button"
+            onClick={() => setIsRequestOpen(true)}
+          >
+            Оформити розстрочку
+          </button>
         </div>
       </div>
+      <InstallmentRequestModal
+        isOpen={isRequestOpen}
+        onClose={() => setIsRequestOpen(false)}
+      />
     </section>
   );
 }

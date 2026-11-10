@@ -1,0 +1,48 @@
+.installment-request-modal {
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.installment-request-subtitle {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.installment-request-select {
+  width: 100%;
+  min-height: 52px;
+  border: 1px solid rgba(63, 49, 33, 0.12);
+  border-radius: 8px;
+  background: rgba(246, 241, 238, 0.5);
+  padding: 0 16px;
+  color: rgba(63, 49, 33, 1);
+  font: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.installment-request-select:focus {
+  outline: none;
+  border-color: rgba(181, 123, 66, 1);
+  background: #fff;
+}
+
+.installment-request-select:invalid {
+  color: rgba(63, 49, 33, 0.55);
+}
+
+.installment-request-select option {
+  color: rgba(63, 49, 33, 1);
+}
+
+.installment-request-error {
+  color: #a33126;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+@media (max-width: 480px) {
+  .installment-request-modal {
+    max-height: calc(100dvh - 16px);
+  }
+}
